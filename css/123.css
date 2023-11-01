@@ -1,0 +1,2104 @@
+@charset "UTF-8";
+@font-face {
+    font-family: iconfont-tb-rate-my;
+    src: url(http://at.alicdn.com/t/font_1418287863_858315.eot);
+    src: url(http://at.alicdn.com/t/font_1418287863_858315.eot?#iefix) format('embedded-opentype'), url(http://at.alicdn.com/t/font_1418287863_858315.woff) format('woff'), url(http://at.alicdn.com/t/font_1418287863_858315.ttf) format('truetype'), url(http://at.alicdn.com/t/font_1418287863_858315.svg#iconfont) format('svg')
+}
+
+.tb-iconfont-rate-my {
+    font-family: iconfont-tb-rate-my;
+    font-style: normal
+}
+
+.ks-overlay {
+    position: absolute;
+    background: #fff;
+    z-index: 90001;
+    left: -9999px;
+    top: -9999px
+}
+
+.ks-dialog {
+    overflow: hidden;
+    padding: 7px;
+    background: rgba(0, 0, 0, .4);
+    background-color: #BFBFBF \0;
+    *background-color: #949993;
+    _filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#00000033, endcolorstr=#00000033)
+}
+
+.ks-dialog .ks-contentbox {
+    position: relative;
+    background: #fff;
+    height: 100%
+}
+
+.ks-dialog .ks-stdmod-header {
+    background: #f2f2f2;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 15px;
+    border-bottom: #b7b7b7 1px solid
+}
+
+.ks-dialog .ks-ext-close {
+    display: block;
+    height: 19px;
+    width: 18px;
+    text-indent: -9999px;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    background: url(http://img03.taobaocdn.com/tps/i3/T1QlgHXc0bXXcrjATa-19-36.png) 0 -19px no-repeat
+}
+
+.ks-dialog .ks-ext-close:hover, .ks-dialog .close-hover {
+    cursor: pointer;
+    background-position: 0 0
+}
+
+.rate-tab {
+    *zoom: 1;
+    padding-left: 20px;
+    position: relative;
+    top: 2px
+}
+
+.rate-tab:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.rate-tab li {
+    float: left;
+    border: 1px solid #CCC;
+    border-bottom: 0;
+    margin-left: 10px;
+    display: inline-block;
+    padding: 7px 28px 6px;
+    margin-top: 3px;
+    cursor: pointer;
+    color: #333
+}
+
+.rate-container {
+    border-top: 2px solid #999
+}
+
+.rate-tab li.selected {
+    background: #F5f5f5;
+    font-weight: 700;
+    margin-top: 0;
+    border: #999 2px solid;
+    border-bottom: 0;
+    padding: 9px 30px 8px
+}
+.rate-auction {
+    padding-top: 2px;
+    float: left;
+    width: 200px;
+    word-break: break-all;
+    white-space: normal;
+    margin-right: 45px;
+}
+.rate-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 12px
+}
+
+.rate-userinfo {
+    float: right;
+    width: 160px
+}
+
+.reviews-list-buyer .rate-userinfo {
+    text-align: right
+}
+
+.rate-content {
+    float: left;
+    width: 450px;
+    position: relative
+}
+
+.tb-r-spu-ratting {
+    background: #fffbf4;
+    padding: 0 0 0 5px;
+    border-bottom: 1px dashed #ffd9af;
+    margin-bottom: 10px
+}
+
+.tb-r-spu-ratting li {
+    float: left;
+    margin-bottom: 2px;
+    width: 215px
+}
+
+.tb-r-date {
+    color: #aaa
+}
+
+.tb-r-sku {
+    color: #aaa
+}
+
+.tb-r-cnt, .tb-r-reply {
+    width: 450px;
+    word-wrap: break-word
+}
+
+.tb-r-info {
+    width: 450px
+}
+
+.tb-r-cnt {
+    color: #404040
+}
+
+.tb-r-reply {
+    margin-top: 8px;
+    color: #bd7f00
+}
+
+.tb-r-shop {
+    margin-top: .75em
+}
+
+.tb-r-shop a {
+    color: #BCBCBC !important
+}
+
+.tb-r-shop a .tb-iconfont-rate-my {
+    font-size: 1.4em;
+    line-height: 1
+}
+
+.tb-r-shop a:hover {
+    color: #1FA5FE !important;
+    text-decoration: none
+}
+
+.tb-r-shop a:hover .tb-iconfont-rate-my {
+    color: #F4533B
+}
+
+.tb-r-append .tb-r-reply {
+    width: 432px;
+    background: #f6f6f6;
+    margin-top: 5px;
+    padding: 9px;
+    padding-left: 14px;
+    color: #bd7f00
+}
+
+.tb-r-append {
+    background: #fff;
+    padding-top: 8px;
+    margin-top: 12px;
+    border-top: 1px dashed #ddd
+}
+
+.tb-r-append .tb-r-info {
+    padding-top: 4px;
+    color: #aaa
+}
+
+.tb-r-append .tb-r-info, .tb-r-append .tb-r-cnt {
+    width: 420px
+}
+
+.tb-r-photos {
+    *zoom: 1
+}
+
+.tb-r-photos:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.tb-r-photos .tb-r-photos-thumbs {
+    *zoom: 1;
+    margin: 10px 0
+}
+
+.tb-r-photos .tb-r-photos-thumbs:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.tb-r-photos .tb-r-photos-thumbs .tb-current {
+    border: 2px solid #f49e00;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    cursor: auto
+}
+
+.tb-r-photos .tb-r-photos-thumbs .tb-current img {
+    cursor: url(http://img01.taobaocdn.com/tps/i1/T1MQMFXgXcXXaSQP_X-16-16.png), url(http://a.tbcdn.cn/img/common/zoom_out.cur), auto
+}
+
+.tb-r-photos .tb-r-photos-thumb {
+    float: left;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #f2f2f2;
+    margin-right: 5px;
+    position: relative;
+    transition: border-color .3s ease-out;
+    -webkit-transition: border-color .3s ease-out;
+    -o-transition: border-color .3s ease-out;
+    -moz-transition: border-color .3s ease-out
+}
+
+.tb-r-photos .tb-r-photos-thumb img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    cursor: url(http://img02.taobaocdn.com/tps/i2/T1HqQGXgtcXXaSQP_X-16-16.png), url(http://a.tbcdn.cn/img/common/zoom_in.cur), auto
+}
+
+.tb-r-photos .tb-photos-arrow {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border: transparent 6px dashed;
+    border-top: 6px solid #f49e00;
+    position: absolute;
+    left: 15px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    bottom: -8px
+}
+
+.tb-r-photos .tb-current .tb-photos-arrow {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    bottom: -14px
+}
+
+.tb-r-photos .tb-r-photo-viewer {
+    position: relative;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 2px;
+    float: left;
+    overflow: hidden
+}
+
+.tb-r-photos .tb-r-photo-viewer img {
+    position: absolute;
+    vertical-align: middle;
+    cursor: url(http://img01.taobaocdn.com/tps/i1/T1MQMFXgXcXXaSQP_X-16-16.png), url(http://a.tbcdn.cn/img/common/zoom_out.cur), auto
+}
+
+.ks-ie .tb-r-photo-viewer img {
+    position: static
+}
+
+.rate-auction {
+    padding-top: 2px;
+    float: left;
+    width: 200px;
+    word-break: break-all;
+    white-space: normal;
+    margin-right: 45px
+}
+
+.rate-auction a {
+    color: #36C
+}
+
+.tb-r-auction-pic {
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: 5px
+}
+
+.tb-r-auction-pic img {
+    display: block
+}
+
+.tb-auction .price {
+    top: 10px
+}
+
+.review-hd {
+    *zoom: 1;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.review-hd:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.review-hd input {
+    margin-right: 2px
+}
+
+.review-hd label {
+    margin-right: 4px
+}
+
+.reviw-hd-item {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 200px;
+    text-indent: 30px
+}
+
+.rate-type {
+    float: left;
+    width: 50px;
+    min-height: 10px;
+    _height: 10px;
+    margin-right: 5px;
+    text-align: center
+}
+
+.rate-type .no-effect {
+    color: #999
+}
+
+.shop-rate-box .primary-action {
+    *margin-top: 10px
+}
+
+.shop-rate-box .secondary-action {
+    *margin-top: 10px
+}
+
+.review-hd input, .review-hd label {
+    vertical-align: middle
+}
+
+.shop-rate-box .secondary-action input {
+    vertical-align: text-bottom;
+    margin-right: 2px
+}
+
+.share-l-item {
+    margin-bottom: 20px;
+    padding: 5px 12px 15px;
+    border-bottom: 1px solid #D5D5D5
+}
+
+.share-auction {
+    margin-top: 8px;
+    margin-left: 10px;
+    padding: 5px;
+    float: right;
+    width: 254px;
+    word-break: break-all;
+    white-space: normal
+}
+
+.share-content {
+    width: 300px
+}
+
+.share-buyer {
+    float: right;
+    width: 184px;
+    padding: 5px
+}
+
+.share-reshare {
+    margin-top: 15px
+}
+
+.share-reshare .tb-r-cnt {
+    background: #f9f9f9;
+    padding: 10px
+}
+
+.rate_user_anony {
+    color: #999
+}
+
+.tb-show-all {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 5;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1EYTcXhNsXXcu5FDa-20-20.png) 0 0 no-repeat;
+    margin-left: 22px;
+    *margin-left: 30px;
+    margin-top: -8px;
+    text-indent: -9999px
+}
+
+.tb-r-spu-ratting, .review-hd, .rate-item, .share-l-item {
+    zoom: 1
+}
+
+.tb-r-spu-ratting:after, .review-hd:after, .rate-item:after, .share-l-item:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.rate-container .tfooter:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.rate-container .tfooter {
+    zoom: 1;
+    background: #f8f8f8;
+    padding: 5px;
+    border-bottom: 1px solid #d5d5d5
+}
+
+.tb-rate-gift {
+    margin-top: 5px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fbb688;
+    background: #fde7d9 url(http://img04.taobaocdn.com/tps/i4/T1laC_XitpXXXXXXXX-20-20.png) 0 0 no-repeat;
+    cursor: default
+}
+
+.tb-review-tip {
+    position: absolute;
+    left: -9999px;
+    top: -999px;
+    border: 1px solid #888;
+    background: #dfdfdf;
+    padding: 3px;
+    width: 150px;
+    text-align: left
+}
+
+.tb-review-tip-cnt {
+    padding: 0 8px;
+    background: #fff
+}
+
+.tb-review-arrow, .tb-review-arrow-inner {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    right: 0;
+    right: -13px;
+    top: 8px;
+    border: transparent dashed 7px;
+    border-left: #dfdfdf solid 7px
+}
+
+.tb-review-arrow {
+    right: -14px;
+    border-left: #888 solid 7px
+}
+
+.tb-no-result {
+    padding: 60px;
+    text-align: center
+}
+
+.checkcode {
+    padding: 60px 0 60px 150px
+}
+
+.checkcode .code-img {
+    width: 100px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 3px;
+    cursor: pointer
+}
+
+.checkcode .code-input {
+    height: 18px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    width: 60px;
+    padding: 3px;
+    margin-right: 3px
+}
+
+.checkcode .code-submit {
+    border: 0;
+    vertical-align: middle;
+    background: #4FB8FF;
+    color: #fff;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    cursor: pointer
+}
+
+.checkcode .code-submit:hover {
+    background: #4090c2
+}
+
+.sufei-tb-dialog-hidden iframe {
+    display: none
+}
+
+.ks-overlay {
+    position: absolute;
+    left: -9999px;
+    top: -9999px
+}
+
+.ks-overlay-hidden {
+    visibility: hidden
+}
+
+.ks-overlay-mask-hidden {
+    display: none
+}
+
+.ks-overlay-shown {
+    visibility: visible
+}
+
+.ks-overlay-mask-shown {
+    display: block
+}
+
+.type-normal #shop-hd {
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
+    background: #fff
+}
+
+.type-normal #shop-hd .TabBarLevel1 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 29px;
+    _height: 29px;
+    background: #fff url(http://pics.taobaocdn.com/bao/album/sys/misc/list_tab_bottom.gif) 0 0 repeat-x
+}
+
+.type-normal #shop-hd .TabBarLevel1 li {
+    float: left;
+    padding: 0;
+    height: 29px;
+    min-height: 29px;
+    _height: 29px;
+    margin-right: 1px;
+    background: url(http://pics.taobaocdn.com/2k5/sys/component/tabbar_level1_slice_left_bk.gif) left top no-repeat
+}
+
+.type-normal #shop-hd .TabBarLevel1 li a {
+    display: block;
+    line-height: 29px;
+    padding: 0 20px;
+    color: #333;
+    white-space: nowrap;
+    background: url(http://pics.taobaocdn.com/2k5/sys/component/tabbar_level1_slice_right_bk.gif) right top no-repeat
+}
+
+.type-normal #shop-hd .TabBarLevel1 li.Selected {
+    background: transparent url(http://pics.taobaocdn.com/bao/album/sys/misc/list_tab_left.gif) 0 0 no-repeat
+}
+
+.type-normal #shop-hd .TabBarLevel1 li.Selected a {
+    background: transparent url(http://pics.taobaocdn.com/bao/album/sys/misc/list_tab_right.gif) 100% 0 no-repeat
+}
+
+.type-normal #shop-hd .TabBarLevel1 li a:link, .type-normal #shop-hd .TabBarLevel1 li a:visited {
+    color: #333
+}
+
+.type-normal #shop-hd .TabBarLevel1 li a:hover, .type-normal #shop-hd .TabBarLevel1 li a:active {
+    color: #F30;
+    text-decoration: none
+}
+
+.type-normal #shop-hd .TabBarLevel1 li.Selected a:link, .type-normal #shop-hd .TabBarLevel1 li.Selected a:visited {
+    color: #000
+}
+
+.type-normal #shop-hd .TabBarLevel1 li.Selected a:hover, .type-normal #shop-hd .TabBarLevel1 li.Selected a:active {
+    color: #F30;
+    text-decoration: none
+}
+
+.type-normal #shop-hd .TabBarLevel1 li#Remark {
+    background: 0 0
+}
+
+.type-normal #shop-hd .TabBarLevel1 li#Remark a {
+    background: url(http://pics.taobaocdn.com/bao/album/sys/auction/item060913_03.gif) left top no-repeat;
+    margin: 0 0 0 10px;
+    padding-left: 25px;
+    font-weight: 700;
+    color: #04D
+}
+
+.type-normal #shop-hd .TabBarLevel1 li#Forum {
+    background: 0 0
+}
+
+.type-normal #shop-hd .TabBarLevel1 li#Forum a {
+    background: url(http://pics.taobaocdn.com/bao/album/sys/auction/item060913_05.gif) left top no-repeat;
+    margin: 0 10px 0 15px;
+    padding-left: 25px;
+    font-weight: 700
+}
+
+.type-normal #shop-hd .TabBarLevel1 li#Forum a:link, .type-normal #shop-hd .TabBarLevel1 li#Remark a:link, .type-normal #shop-hd .TabBarLevel1 li#Forum a:visited, .type-normal #shop-hd .TabBarLevel1 li#Remark a:visited {
+    color: #04D
+}
+
+.type-normal #shop-hd .TabBarLevel1 li#Forum a:hover, .type-normal #shop-hd .TabBarLevel1 li#Remark a:hover, .type-normal #shop-hd .TabBarLevel1 li#Forum a:active, .type-normal #shop-hd .TabBarLevel1 li#Remark a:active {
+    color: #F30;
+    text-decoration: none
+}
+
+#server-num {
+    display: none
+}
+
+#shop-rate-box {
+    color: #666
+}
+
+#shop-rate-box a {
+    color: #36c
+}
+
+#shop-rate-box .rate-icon {
+    background: url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat scroll 1000px 1000px
+}
+
+#shop-rate-box .rate-ok {
+    background-position: -293px -177px
+}
+
+#shop-rate-box .rate-normal {
+    background-position: -293px -142px
+}
+
+#shop-rate-box .icon-seller {
+    background-position: -293px -35px
+}
+
+#shop-rate-box .rate-icon-shop {
+    background-position: -295px 0
+}
+
+#shop-rate-box .rate-bad {
+    background-position: -295px -105px
+}
+
+#shop-rate-box .rate-ok, #shop-rate-box .rate-normal, #shop-rate-box .rate-bad {
+    vertical-align: middle;
+    display: inline-block;
+    width: 18px;
+    height: 17px
+}
+
+.price em {
+    color: #f60;
+    maring: 0 2px;
+    font-family: Tahoma, Helvetica, Arial
+}
+
+.xiaobao-box {
+    *zoom: 1
+}
+
+.xiaobao-box:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.shop-rate-box .personal-info .personal-rating-v3 em.gray {
+    color: #666;
+    padding-left: 15px
+}
+
+.personal-info .info-block {
+    border-top: 1px dashed #ccc;
+    padding: 10px 0 10px 10px
+}
+
+.personal-info .info-block .title {
+    margin-bottom: 10px
+}
+
+.personal-info .info-block dt {
+    width: 5em;
+    float: left;
+    text-align: right
+}
+
+.personal-info .info-block dd {
+    line-height: 22px
+}
+
+.personal-info .info-block ul li {
+    margin-bottom: 9px
+}
+
+.personal-info .info-block ul.sep li img {
+    vertical-align: middle
+}
+
+.personal-info .info-block ul.sep li a, .personal-info .info-block ul.sep li span {
+    padding-left: 5px
+}
+
+.personal-info .info-block .xiaobao1, .personal-info .info-block .xiaobao2 {
+    float: left;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1I6ecXcNjXXXXXXXX-174-450.png) no-repeat 0 -64px;
+    width: 76px;
+    height: 81px
+}
+
+.personal-info .info-block .xiaobao2 {
+    background-position: -80px -64px
+}
+
+.personal-info .info-block .desc {
+    padding-left: 10px;
+    overflow: hidden;
+    zoom: 1
+}
+
+.personal-info .info-block .desc .title {
+    height: 25px
+}
+
+.personal-info .info-block .desc ul li {
+    height: 22px
+}
+
+.personal-info .info-block .desc ul .xiaofei, .personal-info .info-block .desc ul .seven, .personal-info .info-block .desc ul .fake, .personal-info .info-block .desc ul .thirty, .personal-info .info-block .desc ul .lightning, .personal-info .info-block .desc ul .safe, .personal-info .info-block .desc ul .xb-three {
+    background: url(http://img04.taobaocdn.com/tps/i4/T1jQaaXdhgXXXXXXXX-676-800.png) no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-top: -2px;
+    height: 16px;
+    width: 16px
+}
+
+.personal-info .info-block .desc ul .xiaofei {
+    background-position: -50px -417px
+}
+
+.personal-info .info-block .desc ul .seven {
+    background-position: -18px -417px
+}
+
+.personal-info .info-block .desc ul .fake {
+    background-position: -200px -417px
+}
+
+.personal-info .info-block .desc ul .thirty {
+    background-position: -181px -417px
+}
+
+.personal-info .info-block .desc ul .lightning {
+    background-position: -159px -417px
+}
+
+.personal-info .info-block .desc ul .safe {
+    background-position: -2px -417px
+}
+
+.personal-info .info-block .desc ul .xb-three {
+    background: url(http://img03.taobaocdn.com/tps/i3/T1YbihXntnXXXXXXXX-16-16.jpg) no-repeat 0 2px transparent;
+    _margin-right: 5px;
+    margin-right: 0
+}
+
+.personal-info .info-block .quality li {
+    height: 35px
+}
+
+.personal-info .info-block .quality li a:hover {
+    text-decoration: none
+}
+
+.personal-info .info-block .charge {
+    margin-top: 20px
+}
+
+.personal-info .info-block .charge span {
+    font-weight: 700;
+    color: #F60
+}
+
+.personal-info .info-block .flow .arrow {
+    background: url(http://img01.taobaocdn.com/tps/i1/T1WgucXjpxXXXXXXXX-1600-24.png) no-repeat right -10px;
+    padding-right: 14px
+}
+
+.personal-info .info-block .tmall-pro {
+    margin: 0 0 15px
+}
+
+.personal-info .info-block .company {
+    height: auto;
+    margin-bottom: 7px
+}
+
+.personal-info .info-block .company .box-his-rate {
+    float: left;
+    width: 60px
+}
+
+.personal-info .info-block .company .box-chart {
+    float: left;
+    width: 150px
+}
+
+.personal-info .info-block .promise a {
+    display: inline-block;
+    width: 54px;
+    height: 55px;
+    margin-right: 9px
+}
+
+.personal-info .info-block .promise .pro1, .personal-info .info-block .promise .pro2, .personal-info .info-block .promise .pro3 {
+    display: inline-block;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1I6ecXcNjXXXXXXXX-174-450.png) no-repeat 0 0;
+    width: 54px;
+    height: 55px
+}
+
+.personal-info .info-block .promise .pro2 {
+    background-position: -60px 0
+}
+
+.personal-info .info-block .promise .pro3 {
+    background-position: -120px 0
+}
+
+.personal-info .info-block .company {
+    *zoom: 1
+}
+
+.personal-info .info-block .company:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.personal-info .info-block .company .fleft1, .personal-info .info-block .company .fleft2 {
+    float: left
+}
+
+.personal-info .info-block-first {
+    border-top: 0
+}
+
+.shop-rate-box .rate-box {
+    margin-bottom: 10px
+}
+
+.shop-rate-box #prepayInfo_Div {
+    position: relative;
+    z-index: 100
+}
+
+.shop-rate-box .personal-rating .bd h4 {
+    margin-left: 10px
+}
+
+.shop-rate-box .personal-rating .bd .service-info {
+    padding-left: 102px;
+    color: #666;
+    background: url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat 0 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+
+.shop-rate-box .personal-rating .bd .non-join {
+    background-position: -110px 0
+}
+
+.shop-rate-box .personal-rating .service-info ul {
+    position: relative;
+    min-height: 128px;
+    _height: 128px;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #ccc
+}
+
+.shop-rate-box .personal-rating .service-info li {
+    height: 14px;
+    padding: 4px 0
+}
+
+.shop-rate-box .personal-rating .service-info li label {
+    cursor: text
+}
+
+.shop-rate-box .personal-rating .service-info li em {
+    color: #f60
+}
+
+.shop-rate-box .personal-rating .service-info .effort {
+    height: auto;
+    padding-left: 60px;
+    width: 230px;
+    position: relative
+}
+
+.shop-rate-box .personal-rating .service-info .effort label {
+    position: absolute;
+    top: 8px;
+    left: 0
+}
+
+.shop-rate-box .personal-rating .service-info .effort a {
+    display: inline-block;
+    height: 18px;
+    margin-right: 5px;
+    line-height: 18px;
+    color: #666;
+    border-bottom: 1px solid #fff
+}
+
+.shop-rate-box .personal-rating .service-info .effort a:hover {
+    color: #f60;
+    text-decoration: none;
+    border-bottom: 1px solid #f60
+}
+
+.shop-rate-box .personal-rating .service-info .effort a span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+    background: url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat 1000px 1000px
+}
+
+.shop-rate-box .personal-rating .service-info .effort .xb-truth span {
+    background-position: -50px -417px
+}
+
+.shop-rate-box .personal-rating .service-info .effort .xb-auth span {
+    background-position: -200px -417px
+}
+
+.shop-rate-box .personal-rating .service-info .effort .xb-return span {
+    background-position: -18px -417px
+}
+
+.shop-rate-box .personal-rating .service-info .effort .xb-quality span {
+    background-position: -2px -417px
+}
+
+.shop-rate-box .personal-rating .service-info .effort .xb-thunder span {
+    background-position: -159px -417px
+}
+
+.shop-rate-box .personal-rating .service-info .effort .xb-guarantee span {
+    background-position: -187px -417px
+}
+
+.shop-rate-box .refund-flow-er a {
+    padding-right: 15px;
+    background: #fff url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat right -669px
+}
+
+.shop-rate-box .refund-flow-er a.close {
+    background-position: right -640px
+}
+
+.shop-rate-box .personal-rating .bd .service-info .quality-info-box {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    width: 280px;
+    padding: 0
+}
+
+.shop-rate-box .personal-rating .show-quality .quality-info-box .quality-info {
+    width: 280px;
+    height: 128px;
+    overflow: hidden;
+    padding-left: 1px;
+    border-bottom: 1px solid #d7d7d7
+}
+
+.shop-rate-box .personal-rating .bd table {
+    background: #fff
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box table {
+    width: 282px;
+    margin-top: -1px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box th, .shop-rate-box .personal-rating .service-info .quality-info-box td {
+    border: 1px solid #D7D7D7;
+    height: 25px;
+    line-height: 25px;
+    padding: 0
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box th {
+    background-color: #F8F8F8
+}
+
+.personal-rating table th, .personal-rating table td {
+    text-align: center;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 5px
+}
+
+.personal-rating table td {
+    border-bottom-width: 0
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .qatype a {
+    color: #04D;
+    border-bottom: 1px dashed #04d;
+    text-decoration: none
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .qadetail {
+    text-align: left;
+    padding-left: 6px;
+    border-right-width: 0;
+    _border-right-width: 1px;
+    color: gray
+}
+
+.shop-rate-box .personal-rating .quality-info-tip {
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    width: 260px;
+    background-color: #F0F0F0;
+    display: none;
+    border: 1px solid #999;
+    z-index: 100
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .tip {
+    top: 131px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .selected .quality-info-tip {
+    display: block
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .tip .horn {
+    margin-left: 140px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .tip1 {
+    top: 53px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .tip2 {
+    top: 79px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .tip3 {
+    top: 105px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .tip4 {
+    top: 131px
+}
+
+.shop-rate-box .personal-rating .quality-info-tip p {
+    padding: 2px 8px;
+    margin: 4px;
+    background-color: #fff;
+    text-align: left
+}
+
+.shop-rate-box .personal-rating .quality-info-tip .horn {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    width: 10px;
+    height: 6px;
+    background: url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat -96px -274px;
+    border: 0
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .qadetail .stat-no {
+    padding-right: 12px
+}
+
+.shop-rate-box .personal-rating .service-info .quality-info-box .qadetail em {
+    color: #404040
+}
+
+.shop-rate-box .refund-flow {
+    position: relative;
+    padding: 10px;
+    height: 130px;
+    border-top: 1px solid #D7D7D7;
+    border-bottom: 1px solid #D7D7D7;
+    background: #fff url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat 9px -453px;
+    overflow: hidden
+}
+
+.shop-rate-box .refund-flow h3, .refund-flow ol {
+    visibility: hidden
+}
+
+.shop-rate-box .refund-flow a.close {
+    position: absolute;
+    display: block;
+    right: 6px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    background: #fff url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat right -608px;
+    text-indent: -999em
+}
+
+.shop-rate-box .personal-rating .rate-icon-shop em {
+    color: gray
+}
+
+.shop-rate-box .personal-info .personal-rating h4 a {
+    font-weight: 400
+}
+
+#seller-and-buyer .show-list li {
+    width: 100%
+}
+
+.shop-rate-box .personal-info .personal-rating .seller-rate-info li.J_RateInfoTrigger {
+    cursor: pointer
+}
+
+.shop-rate-box .personal-info .personal-rating .seller-rate-info .selected {
+    background: #e5e5e5 url(http://img08.taobaocdn.com/tps/i8/T1ZQ0GXiJFXXXXXXXX-676-800.png) no-repeat;
+    background-position: 0 -384px
+}
+
+.shop-rate-box .personal-rating #seller-and-buyer {
+    position: inherit
+}
+
+.shop-rate-box .personal-rating #seller-and-buyer {
+    position: relative;
+    z-index: 1
+}
+
+.shop-rate-box .personal-rating #seller-and-buyer .bd {
+    border-top: 0 !important
+}
+
+.shop-rate-box .personal-info .personal-rating .two-info, .shop-rate-box .personal-info .personal-rating .two-info .bd {
+    overflow: visible
+}
+
+.shop-rate-box .personal-rating .two-info .tab {
+    width: 694px;
+    height: 21px;
+    clear: both
+}
+
+.shop-rate-box .personal-rating .two-info .tab li.one-info {
+    width: 100%;
+    cursor: default
+}
+
+.shop-rate-box .personal-rating .two-info .tab li {
+    width: 50%;
+    height: 21px;
+    *height: 20px;
+    _height: 21px;
+    float: left;
+    vertical-align: middle;
+    margin-top: 0;
+    *margin-top: 0;
+    _margin-top: -3px;
+    *padding-top: 0;
+    _padding-top: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc
+}
+
+.shop-rate-box .personal-rating .two-info .tab li.selected {
+    border-bottom: 1px solid #fff;
+    background-color: #fff
+}
+
+.shop-rate-box .personal-rating .two-info .tab li h4 {
+    height: 19px;
+    line-height: 19px;
+    margin: 0 0 0 10px;
+    width: auto;
+    padding: 3px 0 0 20px;
+    clear: both
+}
+
+.shop-rate-box .personal-rating .two-info .tab li .seller {
+    border-right: 1px solid #ccc
+}
+
+.shop-rate-box .personal-info .personal-rating .two-info .tab .one-info h4.seller {
+    width: 60%;
+    border-width: 0
+}
+
+.shop-rate-box .personal-info .personal-rating h4.buyer {
+    background-position: -293px -208px
+}
+
+.shop-rate-box .personal-rating .two-info .tab li img {
+    vertical-align: middle
+}
+
+.shop-rate-box .personal-rating .two-info .tab li p.rate-summary {
+    width: 162px;
+    height: 21px;
+    clear: both;
+    float: right;
+    padding-right: 10px;
+    text-align: right;
+    margin-top: -18px;
+    border-right: 0;
+    position: relative
+}
+
+.shop-rate-box .personal-info .personal-rating .two-info .bd {
+    padding-top: 10px;
+    background-color: #fff
+}
+
+.shop-rate-box .personal-rating .two-info .con {
+    position: relative;
+    padding: 0
+}
+
+.shop-rate-box .personal-rating .two-info table {
+    border-width: 0;
+    margin-bottom: 0;
+    width: 694px
+}
+
+.shop-rate-box .personal-rating .two-info .rate-icon {
+    padding-left: 24px;
+    margin-left: -40px
+}
+
+.tb-page-bottom .page-start, .tb-page-bottom .page-prev, .tb-page-bottom .page-next, .tb-page-bottom .page-end {
+    background: url(http://img04.taobaocdn.com/tps/i4/T1cP85XihuXXXXXXXX-13-101.png) no-repeat
+}
+
+#reviews .tb-pagination, #deal-record .tb-pagination {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px
+}
+
+.tb-page-bottom {
+    display: inline;
+    float: right;
+    width: auto
+}
+
+.tb-page-bottom a, .tb-page-bottom .page-info, .tb-page-bottom .page-start, .tb-page-bottom .page-prev, .tb-page-bottom .page-cur, .tb-page-bottom .page-end, .tb-page-bottom .page-break {
+    display: inline;
+    float: left;
+    height: 24px;
+    margin-right: 3px;
+    padding: 0 5px;
+    line-height: 24px;
+    text-align: center;
+    font-family: Tahoma, SimSun, Arial
+}
+
+.tb-page-bottom a, .tb-page-bottom .page-start, .tb-page-bottom .page-prev, .tb-page-bottom .page-cur, .tb-page-bottom .page-end, .tb-page-bottom .page-break {
+    min-width: 16px;
+    _width: 16px;
+    border: 1px solid #ccc
+}
+
+.tb-page-bottom a:hover {
+    text-decoration: none;
+    border: 1px solid #FD6D01
+}
+
+.tb-page-bottom .page-start, .tb-page-bottom .page-prev, .tb-page-bottom .page-next, .tb-page-bottom .page-end {
+    width: 36px
+}
+
+.tb-page-bottom .page-start {
+    padding-left: 16px;
+    background-position: 5px 8px
+}
+
+.tb-page-bottom .page-prev {
+    padding-left: 16px;
+    background-position: 0 -12px
+}
+
+.tb-page-bottom .page-next {
+    padding-right: 16px;
+    background-position: 42px -50px
+}
+
+.tb-page-bottom .page-end {
+    padding-right: 16px;
+    background-position: 47px -31px
+}
+
+.tb-page-bottom .page-cur {
+    font-weight: 700;
+    color: #fd6d01;
+    background-color: #ffede1;
+    border: 1px solid #fd6d01
+}
+
+.tb-page-bottom .page-info, .tb-page-bottom .page-break {
+    color: silver;
+    border: 0
+}
+
+.tb-page-bottom .page-more {
+    margin-left: 5px;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.dsr-info {
+    margin: 20px 0 10px 25px;
+    height: 115px;
+    width: 653px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0
+}
+
+.dsr-info .dsr-item {
+    width: 382px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    vertical-align: middle
+}
+
+.dsr-info .selected {
+    background: #e5e5e5
+}
+
+.dsr-info .selected .dsr-info-box {
+    display: block
+}
+
+.dsr-info .item-scrib {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    color: gray
+}
+
+.dsr-info .item-scrib .tb-title {
+    margin-top: 4px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #404040
+}
+
+.dsr-info .item-scrib .count {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f60
+}
+
+.dsr-info .item-scrib .percent {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    width: 79px;
+    padding-left: 130px;
+    text-align: center;
+    height: 28px;
+    line-height: 26px;
+    display: block;
+    color: #fff
+}
+
+.dsr-info .item-scrib .over, .dsr-info .item-scrib .normal, .dsr-info .item-scrib .lower {
+    background: url(http://img01.taobaocdn.com/tps/i1/T1ivNYXXdzXXXXXXXX-676-860.png) no-repeat
+}
+
+.dsr-info .item-scrib .over {
+    background-position: 0 -283px
+}
+
+.dsr-info .item-scrib .lower {
+    background-position: 0 -309px
+}
+
+.dsr-info .item-scrib .normal {
+    background-position: 0 -832px
+}
+
+.dsr-info .dsr-info-box {
+    color: #666;
+    background: #e5e5e5;
+    width: 250px;
+    height: 114px;
+    line-height: 15px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    font-size: 11px;
+    display: none;
+    margin-bottom: 0;
+    z-index: 50;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+
+.dsr-info .dsr-info-box .box-wrap {
+    padding: 10px
+}
+
+.dsr-info .dsr-info-box .h {
+    color: #f50
+}
+
+.dsr-info .dsr-info-box .total {
+    height: 24px
+}
+
+.dsr-info .dsr-info-box .total .h {
+    cursor: pointer
+}
+
+.dsr-info .dsr-info-box .count {
+    height: 15px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.dsr-info .dsr-info-box .count .unit {
+    color: gray
+}
+
+.dsr-info .dsr-info-box .rate-stat {
+    display: inline-block;
+    margin-bottom: 3px;
+    height: 10px;
+    font-size: 0;
+    line-height: 1px;
+    margin-right: 4px;
+    zoom: 1;
+    vertical-align: middle;
+    background-color: #ff944c
+}
+
+.dsr-info .dsr-info-box .people-no {
+    color: gray
+}
+
+.star-value-no {
+    background: url(http://img01.taobaocdn.com/tps/i1/T1I6ecXcNjXXXXXXXX-174-450.png) no-repeat
+}
+
+.star-value-desc {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    vertical-align: top
+}
+
+.star-value-desc .star-person-num {
+    color: #404040;
+    padding: 0 3px
+}
+
+.star-value-5, .star-value-5d0 {
+    background-position: 0 -152px
+}
+
+.star-value-4d9, .star-value-4d8, .star-value-4d7, .star-value-4d6, .star-value-4d5, .star-value-4d4, .star-value-4d3, .star-value-4d2, .star-value-4d1 {
+    background-position: 0 -172px
+}
+
+.star-value-4, .star-value-4d0 {
+    background-position: 0 -193px
+}
+
+.star-value-3d9, .star-value-3d8, .star-value-3d7, .star-value-3d6, .star-value-3d5, .star-value-3d4, .star-value-3d3, .star-value-3d2, .star-value-3d1 {
+    background-position: 0 -214px
+}
+
+.star-value-3, .star-value-3d0 {
+    background-position: 0 -235px
+}
+
+.star-value-2d9, .star-value-2d8, .star-value-2d7, .star-value-2d6, .star-value-2d5, .star-value-2d4, .star-value-2d3, .star-value-2d2, .star-value-2d1 {
+    background-position: 0 -256px
+}
+
+.star-value-2, .star-value-2d0 {
+    background-position: 0 -277px
+}
+
+.star-value-1d9, .star-value-1d8, .star-value-1d7, .star-value-1d6, .star-value-1d5, .star-value-1d4, .star-value-1d3, .star-value-1d2, .star-value-1d1 {
+    background-position: 0 -298px
+}
+
+.star-value-1, .star-value-1d0 {
+    background-position: 0 -319px
+}
+
+.star-value-0d9, .star-value-0d8, .star-value-0d7, .star-value-0d6, .star-value-0d5, .star-value-0d4, .star-value-0d3, .star-value-0d2, .star-value-0d1 {
+    background-position: 0 -340px
+}
+
+.star-value-0, .star-value-0d0 {
+    background-position: 0 -361px
+}
+
+.small-star-no1, .small-star-no2, .small-star-no3, .small-star-no4, .small-star-no5 {
+    display: inline-block;
+    width: 78px;
+    height: 11px;
+    line-height: 11px;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1I6ecXcNjXXXXXXXX-174-450.png) no-repeat -96px -261px
+}
+
+.small-star-no1 {
+    background-position: -96px -325px
+}
+
+.small-star-no2 {
+    background-position: -96px -309px
+}
+
+.small-star-no3 {
+    background-position: -96px -293px
+}
+
+.small-star-no4 {
+    background-position: -96px -277px
+}
+
+.star-value-no {
+    width: 89px;
+    height: 16px;
+    overflow: hidden;
+    display: -moz-inline-box;
+    display: inline-block;
+    vertical-align: inherit !important
+}
+
+.star-value-no em {
+    visibility: hidden
+}
+
+.shop-service-info {
+    padding: 10px;
+    min-height: 168px;
+    _height: 168px
+}
+
+.shop-service-info .left1 {
+    float: left;
+    margin-right: 10px;
+    width: 360px
+}
+
+.shop-service-info .left1 .current {
+    position: absolute;
+    width: 358px;
+    height: 24px;
+    top: 9px;
+    left: 0;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1WgucXjpxXXXXXXXX-1600-24.png) no-repeat -1140px 0;
+    z-index: 0
+}
+
+.shop-service-info .left2 {
+    float: left;
+    width: 253px
+}
+
+.shop-service-info .left1 .bg30 {
+    position: relative;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1WgucXjpxXXXXXXXX-1600-24.png) repeat-y -2px 0
+}
+
+.shop-service-info .left1 span, .shop-service-info .left2 span {
+    display: inline-block
+}
+
+.shop-service-info .self {
+    color: #f60;
+    font-weight: 700;
+    margin-left: 125px
+}
+
+.shop-service-info .average {
+    font-weight: 700;
+    margin-left: 96px
+}
+
+.shop-service-info .each {
+    position: relative;
+    height: 25px;
+    padding-top: 10px;
+    z-index: 1;
+    cursor: pointer
+}
+
+.shop-service-info .each .tb-sub1 {
+    width: 96px;
+    padding-left: 20px
+}
+
+.shop-service-info .each .sub2 {
+    width: 59px;
+    padding-left: 3px;
+    color: #f60
+}
+
+.shop-service-info .each .sub3 {
+    width: 54px;
+    padding-left: 25px
+}
+
+.shop-service-info .msgbox {
+    margin-top: 10px
+}
+
+.shop-service-info .each .sub4 {
+    width: 58px;
+    padding-left: 3px;
+    color: #000
+}
+
+.shop-service-info .left2 .detail-con {
+    display: none
+}
+
+.shop-service-info .left2 .selected {
+    display: block
+}
+
+.shop-service-info .left2 .detail-con .bg-top {
+    margin-top: 4px;
+    background: url(http://gtms03.alicdn.com/tps/i3/T12UtLFqdhXXaT5DPr-895-5.png) no-repeat 0 0;
+    width: 295px;
+    height: 5px;
+    font-size: 0
+}
+
+.shop-service-info .left2 .detail-con .bg-con {
+    background: url(http://gtms03.alicdn.com/tps/i3/T12UtLFqdhXXaT5DPr-895-5.png) repeat-y -300px 0;
+    width: 265px;
+    height: 140px;
+    padding: 5px 15px
+}
+
+.shop-service-info .left2 .detail-con .bg-con .title {
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #b2b2b2
+}
+
+.shop-service-info .left2 .detail-con .bg-con .orange {
+    padding-right: 3px;
+    color: #f60
+}
+
+.shop-service-info .left2 .detail-con .bg-con .uperline {
+    border-top: 1px solid #bdbdbd;
+    margin-top: 5px;
+    padding-top: 5px
+}
+
+.shop-service-info .left2 .detail-con .bg-con .gray {
+    color: #787878
+}
+
+.shop-service-info .left2 .detail-con .bg-con .status1 {
+    padding-top: 10px
+}
+
+.shop-service-info .left2 .detail-con .bg-bt {
+    background: url(http://gtms03.alicdn.com/tps/i3/T12UtLFqdhXXaT5DPr-895-5.png) no-repeat -600px bottom;
+    width: 295px;
+    height: 5px;
+    font-size: 0
+}
+
+.punish-msg {
+    margin: 0 0 10px 10px
+}
+
+ul.tb-rate-tree-like {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px
+}
+
+ul.tb-rate-tree-like li {
+    line-height: 18px;
+    margin: 0;
+    padding: 2px 0 0 18px;
+    background: transparent url(http://gtms03.alicdn.com/tps/i3/TB1F9rUHXXXXXcCXFXXG6tT_VXX-12-200.gif) no-repeat 0 -90px
+}
+
+ul.tb-rate-tree-like li:first-child {
+    padding-top: 8px;
+    background-position: 0 -84px
+}
+
+ul.tb-rate-tree-like li:last-child {
+    background-position: 0 -180px
+}
+
+ul.tb-rate-tree-like li.not-leaf {
+    background-position: 0 0;
+    color: #999;
+    padding-bottom: 2px;
+    font-size: .95em
+}
+
+ul.tb-rate-tree-like li.not-leaf:last-child {
+    background-position: 0 -180px;
+    padding-bottom: 0
+}
+
+.shop-rate-box {
+    width: 950px
+}
+
+.shop-rate-box .grid-s6m0 .main-wrap {
+    margin-left: 240px
+}
+
+.shop-rate-box .grid-s6m0 .col-sub {
+    width: 230px;
+    margin-left: -100%
+}
+
+.type-normal #page {
+    width: 950px
+}
+
+.personal-rating .box-shadow {
+    border: solid 3px #eee
+}
+
+.personal-rating .rate-box .hd {
+    background: #f4f9ff;
+    padding: 5px 10px;
+    border: 1px solid #d7d7d7
+}
+
+.personal-rating .rate-box .hd em {
+    font-weight: 400;
+    margin-left: 10px
+}
+
+.personal-rating .rate-box .hd h4 {
+    padding-left: 2em
+}
+
+.personal-rating .rate-box .bd {
+    padding: 1px;
+    border: 1px solid #d7d7d7;
+    border-top: 0;
+    background: #fff
+}
+
+#shop-rate-box .left-box {
+    background: #fff url(http://img01.taobaocdn.com/tps/i1/T1I6ecXcNjXXXXXXXX-174-450.png) repeat-x 0 -389px;
+    margin-bottom: 20px;
+    min-height: 60px
+}
+
+#shop-rate-box .left-box .hd {
+    padding: 6px 0 6px 12px;
+    font-weight: 700
+}
+
+#shop-rate-box .left-box .bd {
+    background: 0 0;
+    padding-top: 10px;
+    padding: 0
+}
+
+#shop-rate-box .personal-info-box {
+    border: 1px solid #d8d8d8;
+    background: #fff
+}
+
+#shop-rate-box .personal-info-box .hd {
+    background: #f2f2f2;
+    border-bottom: 1px solid #d8d8d8
+}
+
+.box-shadow-combo {
+    border: solid 3px #eee;
+    *zoom: 1
+}
+
+.box-shadow-combo .rate-box {
+    border: 1px solid #d8d8d8;
+    margin: 0
+}
+
+.box-shadow-combo:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.box-shadow-combo .box-his-rate {
+    float: left;
+    width: 400px;
+    margin-right: 10px;
+    overflow: hidden !important
+}
+
+.box-shadow-combo .box-his-rate .show-list td {
+    width: 85px;
+    height: 30px;
+    padding: 0
+}
+
+.box-shadow-combo .box-his-rate .show-his-list {
+    display: block;
+    border: 1px solid #fff
+}
+
+.box-shadow-combo .box-his-rate .show-his-list:hover {
+    background: #f2f2f2
+}
+
+.box-shadow-combo .seller-rate-info {
+    position: relative;
+    height: 220px
+}
+
+.box-his-rate .menu-list ul, .box-his-rate .show-list ul {
+    height: auto
+}
+
+.box-his-rate .menu-list {
+    *zoom: 1;
+    padding-top: 20px;
+    position: relative;
+    margin-left: 25px;
+    _margin-left: 15px;
+    height: auto;
+    z-index: 1;
+    cursor: auto
+}
+
+.box-his-rate .menu-list:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both
+}
+
+.box-his-rate .menu-list li {
+    float: left;
+    width: auto;
+    height: 18px;
+    line-height: 18px;
+    margin: 0 5px 0 0;
+    text-align: bold;
+    padding: 2px 9px;
+    border: solid 1px #d2d2d2;
+    color: #333;
+    cursor: pointer
+}
+
+.box-his-rate .menu-list li.current {
+    border-bottom: solid 1px #fff;
+    font-weight: 700
+}
+
+.box-his-rate .show-list {
+    position: relative;
+    padding: 20px 0 20px 20px;
+    _padding: 15px 0 20px 5px;
+    top: -1px;
+    border-top: solid 1px #d2d2d2;
+    height: auto;
+    z-index: 0;
+    cursor: auto
+}
+
+.box-his-rate .show-list .orange {
+    color: #f60
+}
+
+.box-his-rate .show-list li {
+    height: auto
+}
+
+.box-his-rate .show-list table {
+    width: 90%
+}
+
+.box-his-rate .show-list td {
+    border: 1px solid #E6E6E6;
+    border-collapse: collapse;
+    padding: 8px
+}
+
+.box-his-rate .show-list .rate-icon {
+    *margin-right: 4px
+}
+
+.box-his-rate .show-list .first-col {
+    border-top: 0;
+    border-left: 0
+}
+
+.box-chart {
+    float: right;
+    width: 276px;
+    overflow: hidden !important
+}
+
+.box-chart .arrow {
+    position: absolute;
+    top: 126px;
+    left: 60px;
+    background: url(http://img01.taobaocdn.com/tps/i1/T1WgucXjpxXXXXXXXX-1600-24.png) no-repeat -1520px 0;
+    width: 18px;
+    height: 10px
+}
+
+.box-chart .list {
+    margin-left: 23px;
+    height: 20px;
+    line-height: 20px
+}
+
+.box-chart .list a {
+    vertical-align: middle;
+    position: relative;
+    top: -2px
+}
+
+.box-chart .frame {
+    border-top: solid 1px #d8d8d8;
+    padding-top: 10px;
+    *zoom: 1
+}
+
+.ks-chart-tooltip {
+    box-shadow: 1px 1px 2px #555;
+    padding: 3px 5px;
+    position: absolute;
+    z-index: 9999;
+    background: #333;
+    background: rgba(20, 20, 20, .9);
+    color: #fff;
+    max-length: 120px;
+    border-radius: 4px
+}
+
+.ks-chart-tooltip ul {
+    list-style: none
+}
+
+.chart-box {
+    position: relative;
+    width: 276px;
+    height: 135px;
+    overflow: hidden
+}
+
+.chart-main {
+    padding: 0
+}
+
+.chart-info {
+    position: absolute;
+    width: 132px;
+    left: 123px;
+    top: 12px;
+    background: #fff
+}
+
+.chart-info dd, .chart-info dt {
+    background: url(http://img01.taobaocdn.com/tps/i1/T1bnyfXiFcXXXXXXXX-132-43.png) 1000px 1000px no-repeat
+}
+
+.chart-info dt {
+    height: 19px;
+    background-position: 0 0;
+    background-color: #f40;
+    padding-left: 37px;
+    color: #fff
+}
+
+.chart-info dd {
+    height: 24px;
+    padding-left: 8px;
+    line-height: 23px;
+    background-position: 0 -19px;
+    background-color: #dedede;
+    color: #666
+}
+
+.chart-handle {
+    position: absolute;
+    top: 31px;
+    left: 99px;
+    background: url(http://img02.taobaocdn.com/tps/i2/T1VImdXX8sXXXXXXXX-24-13.gif) 0 0 no-repeat;
+    width: 24px;
+    height: 13px
+}
+
+.chart-info dd .data {
+    padding-left: 8px
+}
+
+#rate-chart {
+    margin-top: 25px;
+    margin-left: 18px
+}

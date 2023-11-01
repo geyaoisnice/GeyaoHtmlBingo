@@ -1,0 +1,1829 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BIGO商城首页</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <SCRIPT type=text/javascript src="js/swfobject.js"></SCRIPT>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/ScrollPic.js"></script>
+    <script type="text/javascript" src="js/new.js"></script>
+    <script type="text/javascript" src="js/focus.js"></script>
+    <script type="text/javascript" src="js/img-show.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <SCRIPT type=text/javascript>
+        var cacheBuster = "?t=" + Date.parse(new Date());
+        var stageW = 638;//"100%";
+        var stageH = 298;//"100%";
+        var attributes = {};
+        attributes.id = 'show_pro_img';
+        attributes.name = attributes.id;
+        var params = {};
+        params.bgcolor = "#ffffff";
+        var flashvars = {};
+        flashvars.componentWidth = stageW;
+        flashvars.componentHeight = stageH;
+        flashvars.pathToFiles = "focus/";
+        flashvars.xmlPath = "focus.xml";
+        params.wmode = "opaque";
+        swfobject.embedSWF("focus/preview.swf" + cacheBuster, attributes.id, stageW, stageH, "9.0.124", "focus/expressInstall.swf", flashvars, params);
+
+        jQuery(function () {
+            jQuery(".nav-mycart").hover(function () {
+                jQuery("#mycart_01").removeClass("btn_mycart").addClass("btn_mycart_over");
+                jQuery(".nav-mycart-box").css("display", "block");
+            }, function () {
+                jQuery("#mycart_01").removeClass("btn_mycart_over").addClass("btn_mycart");
+                jQuery(".nav-mycart-box").css("display", "none");
+            });
+        });
+
+        function showTrends(page) {
+            for (var i = 1; i <= 3; i++) {
+                if (page == i) {
+                    $('#page_' + i).addClass('act');
+                    $('#trends_' + i).css({'display': 'block'});
+                } else {
+                    $('#page_' + i).removeClass('act');
+                    $('#trends_' + i).css({'display': 'none'});
+                }
+            }
+        }
+        changepagestyle = function (type) {
+            var links = $("link");
+            links[0].setAttribute("href", "css" + type + "/common.css");
+            links[1].setAttribute("href", "css" + type + "/style.css");
+        }
+        initmenu = function () {
+            var menus = [
+                {name: '女装', items: ['上装', '裙装', '裤装', '外套', '特色女衣', '配件/饰品']},
+                {name: '男装', items: ['上装', '裤装', '外套', '特色男装', '配件/饰品']},
+                {name: '童装', items: ['上装', '下装', '外套', '特色童装']},
+                {name: '箱包/鞋类', items: ['时尚包袋', '行李箱包', '男鞋', '女鞋', '童鞋']},
+                {name: '餐饮美食', items: ['西餐/料理', '小吃', '川湘菜', '饮料/咖啡', '蛋糕甜心', '其他']},
+                {name: '酒店住宿', items: ['快捷酒店', '豪华酒店', '物价房', ]},
+                {name: '休闲娱乐', items: ['KTV', '足浴', '电影', '美甲/美容']}
+            ], htmlstr = [];
+            for (var i = 0; i < menus.length; i++) {
+                var menu = menus[i], item, rowstr = "", k = 1, cr = false;
+                htmlstr.push('<div class="sidelist_pro">');
+                htmlstr.push('<span>');
+                htmlstr.push('<h3>');
+                htmlstr.push('<strong><a href="#">');
+                htmlstr.push(menu.name);
+                htmlstr.push('</a></strong>');
+                htmlstr.push('<div class="sidelist_pro_sub">');
+                for (var j = 0; j < menu.items.length; j++) {
+                    item = menu.items[j];
+                    if ((k == 4 && (item + rowstr).length >= 6) || (k == 3 && (item + rowstr).length >= 8)) {
+                        cr = true;
+                    }
+                    if (cr) {
+                        k = 1
+                        rowstr = "";
+                        htmlstr.push('</ul>');
+                        cr = false;
+                    }
+                    k++;
+                    if (rowstr == "") {
+                        htmlstr.push('<ul>');
+                        htmlstr.push('<li class="noborder">');
+                    } else
+                        htmlstr.push('<li>');
+                    htmlstr.push('<a href="#">');
+                    htmlstr.push(item);
+                    htmlstr.push('</a>');
+                    htmlstr.push('</li>');
+                    if (j == menu.items.length - 1)
+                        htmlstr.push('</ul>');
+                    rowstr += item;
+                }
+                htmlstr.push('</div>');
+                htmlstr.push('</h3>');
+                htmlstr.push('</span>');
+                htmlstr.push('</div>');
+            }
+//            $('#sidebar_pro').html(htmlstr.join(""))
+        }
+        //        changepagestyle(1);
+        //        $(document).ready(function(){
+        //
+        //            $("#divID").show(function(){
+        //                alert("completed");
+        //            });
+        //        });
+    </SCRIPT>
+    <!--首页顶部滑动广告 strat-->
+    <script type="text/javascript" language="javascript">
+        var time_gd = 500
+        var hgd = 0
+        function addCount_gd () {
+            if (time_gd > 0) {
+                time_gd--
+                hgd = hgd + 5
+            }
+            else {
+                return
+            }
+            if (hgd > 95)  //高度
+            {
+                return
+            }
+            document.getElementById("top_gd").style.display = ""
+            document.getElementById("top_gd").style.height = hgd + "px"
+            setTimeout("addCount_gd()", 30)
+        }
+
+        function onload3 () {
+            addCount_gd()
+            setTimeout("noneAds()", 4000) //停留时间自己适当调整
+        }
+    </script>
+    <script type="text/javascript" language="javascript">
+        var Tgd = 95
+        var Ngd = 95 //高度
+        function noneAds () {
+            if (Tgd > 0) {
+                Tgd--
+                Ngd = Ngd - 5
+            }
+            else {
+                return
+            }
+            if (Ngd < 0) {
+                document.getElementById("top_gd").style.display = "none"
+                return
+            }
+
+            document.getElementById("top_gd").style.height = Ngd + "px"
+            setTimeout("noneAds()", 30)
+        }
+    </script>
+    <!--首页顶部滑动广告 end-->
+</head>
+
+<body>
+    <div class="header">
+        <div class="minwidth">
+            <div style="width:1200px;overflow: hidden;margin:5px auto;">
+                <div id="top_gd"
+                    style="margin:auto; display:none; width:1200px; top:0px; height:0px; overflow:hidden; text-align:center;">
+                    <div width="1200" height="95"><a href="#"><img src="images/index/111.jpg" border="0" alt=""></a>
+                    </div>
+                </div>
+                <dl class="login">
+                    <div class="top_left">
+                        <dd><a href="#"><img src="images/header_top_1.jpg" alt="" /> 收藏本站</a></dd>
+                        <dd>Hi！欢迎来到必购商城</dd>
+                        <!--<dd style="float:left;margin-right:740px;"><a href="#">页面风格：</a>-->
+                        <!--<a href="javascript:changepagestyle('')"><img src="images/page_style_1.png" width="10" height="10"/></a>-->
+                        <!--<a href="javascript:changepagestyle(1)"><img src="images/page_style_2.png" width="10" height="10"/></a>-->
+                        <!--</dd>-->
+                        <dd><a href="503登录页.html">[登录]</a></dd>
+                        <dd><a href="501注册页.html">[注册]</a></dd>
+                    </div>
+                    <div class="top_right">
+                        <!--<dd><a href="#">[消息中心]</a></dd>-->
+                        <dd><a href="#"><img src="images/header_top_2.jpg" alt="" />购物车</a></dd>
+                        <dd><a href="402-00买家中心首页.html" target="_blank"><img src="images/header_top_3.jpg"
+                                    alt="" />会员中心</a></dd>
+                        <dd><a href="#"><img src="images/header_top_4.jpg" alt="" />帮助中心</a></dd>
+                        <dd><a href="#"><img src="images/header_top_5.jpg" alt="" />网站地图</a></dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="clear"></div>
+
+            <div class="topadv">
+                <div style="width: 1200px;margin: 0 auto;">
+                    <img src="./images/header_bgad.png" alt="" class="header_img">
+                </div>
+            </div>
+
+            <div class="login_d" style="width:1200px; margin:0 auto;overflow: hidden;padding:10px 0">
+                <a href="101首页.html">
+                    <div class="logo"></div>
+                </a>
+                <div class="search">
+                    <div class="search-triggers">
+                        <ul class="switchable-nav" id="sear_ch">
+                            <li class="J_SearchTab goods-search-tab selected" onClick="seachTag('seach_tag1')"
+                                id="seach_tag1">商品</li>
+                            <li class="J_SearchTab tmall-search-tab" onClick="seachTag('seach_tag2')" id="seach_tag2">店铺
+                            </li>
+                            <li class="J_SearchTab shop-search-tab" onClick="seachTag('seach_tag3')" id="seach_tag3">样品
+                            </li>
+                        </ul>
+                        <div class="search-tab-icon"><i><em></em><span></span></i></div>
+                    </div>
+                    <div class="i-search ld">
+                        <ul id="shelper" class="hide"></ul>
+                        <div class="form">
+                            <input type="text" class="text" accesskey="s" id="key" autocomplete="off"
+                                onkeydown="javascript:if(event.keyCode==13) search('key');">
+                            <input type="button" value="搜索" class="button" onclick="search('key');return false;">
+                        </div>
+                        <div class="advanced_search"><a href="#">高级搜索</a></div>
+                    </div>
+                    <div class="hotwords"><strong>热门搜索：</strong><a href="#" target="_blank"
+                            style="color:#ff0000">新年盛典</a><a href="#" target="_blank">圣诞活动</a><a href="#"
+                            target="_blank">家电满减</a><a href="#" target="_blank">车品满减</a>
+                    </div>
+                </div>
+                <div class="tab">
+                    <div>
+                        <img src="images/index/make.png" alt="" class="make_img" />
+                    </div>
+                    <!--<div class="nav-mycart">-->
+                    <!--<div><a href="#"><img src="images/mycart.jpg" alt=""/><span>我的购物车(<b>1</b>)</span></a></div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <script type=text/javascript>
+            function seachTag(seach_tag) {
+                // 操作标签
+                var tag = document.getElementById("sear_ch").getElementsByTagName("li");
+                var taglength = tag.length;
+                for (var i = 0; i < taglength; i++) {
+                    tag[i].className = "";
+                }
+                document.getElementById(seach_tag).className = "selected";
+            }
+        </script>
+        </div>
+        <div class="nav-menu minwidth">
+            <div class="nav-menu_1">
+                <ul>
+                    <li style="width: 215px"><a a href="#">全部商品分类﹀</a></li>
+                    <li><a href="101首页.html" class="act">首页</a></li>
+                    <li><a href="#">批发馆</a></li>
+                    <li><a href="#">供爆款</a></li>
+                    <li><a href="#">品牌汇</a></li>
+                    <li><a href="#">新资讯</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box">
+            <div class="box_l">
+                <div class="nav line">
+                    <div id="sidebar_pro">
+                        <div class="sidelist_pro"><span>
+                                <h3><strong><a href="#">女装</a></strong>
+                                    <div class="sidelist_pro_sub">
+                                        <ul>
+                                            <li class="noborder"><a href="#">上装</a></li>
+                                            <li><a href="#">裙装</a></li>
+                                            <li><a href="#">裤装</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="noborder"><a href="#">外套</a></li>
+                                            <li><a href="#">特色女衣</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="noborder"><a href="#">配件/饰品</a></li>
+                                        </ul>
+                                    </div>
+                                </h3>
+                            </span>
+                            <div class="i-list_pro">
+                                <div class="i-list_pro_l">
+                                    <div class="subitem">
+                                        <dl>
+                                            <dt><a href="#" class="fore1">电子书刊</a></dt>
+                                            <dd><em><a href="#">电子书</a></em><em><a href="#">网络原创</a></em><em><a
+                                                        href="#">数字杂志</a></em><em><a href="#">多媒体图书</a></em><em><a
+                                                        href="#">电子书</a></em></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">音像</a></dt>
+                                            <dd><em><a href="#">音乐</a></em><em><a href="#">影视</a></em><em><a
+                                                        href="#">教育音像</a></em><em><a href="#">多媒体图书</a></em></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">英文原版</a></dt>
+                                            <dd><em><a href="#">英文原版首页</a></em><em><a href="#">少儿</a></em><em><a
+                                                        href="#">商业投资</a></em><em><a href="#">英语学习与考试</a></em><em><a
+                                                        href="#">小说</a></em></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">文艺</a></dt>
+                                            <dd><em><a href="#">小说</a></em><em><a href="#">文学</a></em><em><a
+                                                        href="#">青春文学</a></em><em><a href="#">亚述学</a></em><em><a
+                                                        href="#">艺术</a></em>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">电子书刊</a></dt>
+                                            <dd><em><a href="#">电子书</a></em><em><a href="#">网络原创</a></em><em><a
+                                                        href="#">数字杂志</a></em><em><a href="#">多媒体图书</a></em><em><a
+                                                        href="#">电子书</a></em></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">音像</a></dt>
+                                            <dd><em><a href="#">音乐</a></em><em><a href="#">影视</a></em><em><a
+                                                        href="#">教育音像</a></em><em><a href="#">多媒体图书</a></em></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">英文原版</a></dt>
+                                            <dd><em><a href="#">英文原版首页</a></em><em><a href="#">少儿</a></em><em><a
+                                                        href="#">商业投资</a></em><em><a href="#">英语学习与考试</a></em><em><a
+                                                        href="#">小说</a></em></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#" class="fore1">文艺</a></dt>
+                                            <dd><em><a href="#">小说</a></em><em><a href="#">文学</a></em><em><a
+                                                        href="#">青春文学</a></em><em><a href="#">亚述学</a></em><em><a
+                                                        href="#">艺术</a></em>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="i-list_pro_r">
+                                    <div class="brands_in">
+                                        <h4>推荐品牌</h4>
+                                        <ul>
+                                            <li><a href="#">韩都衣舍</a></li>
+                                            <li><a href="#">欧迪芬内衣</a></li>
+                                            <li><a href="#">太平鸟</a></li>
+                                            <li><a href="#">卡璐琳兰</a></li>
+                                            <li><a href="#">维多利亚秘密</a></li>
+                                            <li><a href="#">Rosas Mode</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="active">
+                                        <h4>促销活动</h4>
+                                        <ul>
+                                            <li><a href="#">朵唯iEvaD7女性智能手机</a></li>
+                                            <li><a href="#">美乐乐家具首发</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidelist_pro"><span>
+                                <h3><strong><a href="#">男装</a></strong>
+
+                                    <div class="sidelist_pro_sub">
+                                        <ul>
+                                            <li class="noborder"><a href="#">上装</a></li>
+                                            <li><a href="#">裤装</a></li>
+                                            <li><a href="#">外套</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="noborder"><a href="#">特色男装</a></li>
+                                            <li><a href="#">配件/饰品</a></li>
+                                        </ul>
+                                    </div>
+                                </h3>
+                            </span></div>
+                        <div class="sidelist_pro"><span>
+                                <h3><strong><a href="#">童装</a></strong>
+                                    <div class="sidelist_pro_sub">
+                                        <ul>
+                                            <li class="noborder"><a href="#">上装</a></li>
+                                            <li><a href="#">下装</a></li>
+                                            <li><a href="#">外套</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="noborder"><a href="#">特色童装</a></li>
+                                        </ul>
+                                    </div>
+                                </h3>
+                            </span></div>
+                        <div class="sidelist_pro"><span>
+                                <h3><strong><a href="#">箱包/鞋类</a></strong>
+                                    <div class="sidelist_pro_sub">
+                                        <ul>
+                                            <li class="noborder"><a href="#">时尚包袋</a></li>
+                                            <li><a href="#">行李箱包</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="noborder"><a href="#">男鞋</a></li>
+                                            <li><a href="#">女鞋</a></li>
+                                            <li><a href="#">童鞋</a></li>
+                                        </ul>
+                                    </div>
+                                </h3>
+                            </span></div>
+                        <div class="sidelist_pro"><span>
+                                <h3><strong><a href="#">本地生活</a></strong>
+                                    <div class="sidelist_pro_sub">
+                                        <ul>
+                                            <li class="noborder"><a href="#">餐饮</a></li>
+                                            <li><a href="#">酒店住宿</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="noborder"><a href="#">休闲娱乐</a></li>
+                                        </ul>
+                                    </div>
+                                </h3>
+                            </span>
+                        </div>
+                        <div class="siedlist_more">
+                            <ul>
+                                <li><a href="#">挂板试卖</a></li>
+                                <li><a href="#">一件代发</a></li>
+                                <li><a href="#">热卖频道</a></li>
+                                <li><a href="#">包退换</a></li>
+                                <li><a href="#">企业上新</a></li>
+                                <li><a href="#">企业上新</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box_r" style="width: 985px;">
+                <div class="box_r_c">
+                    <div class="box_r_c_l">
+                        <div class="focus line">
+                            <div class="content">
+                                <ul class="imgBox">
+                                    <li><a href="#" target="_blank"><img src="focus/images/01.png"></a></li>
+                                    <li><a href="#" target="_blank"><img src="focus/images/02.png"></a></li>
+                                    <li><a href="#" target="_blank"><img src="focus/images/03.png"></a></li>
+                                    <li><a href="#" target="_blank"><img src="focus/images/04.png"></a></li>
+                                    <li><a href="#" target="_blank"><img src="focus/images/02.png"></a></li>
+                                </ul>
+                                <div class="currentNum">
+                                    <span class="imgNum mark-color"></span>
+                                    <span class="imgNum"></span>
+                                    <span class="imgNum"></span>
+                                    <span class="imgNum"></span>
+                                    <span class="imgNum"></span>
+                                </div>
+                                <div class="control to-left"><i class="fa fa-angle-left"></i></div>
+                                <div class="control to-right"><i class="fa fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                        <div class="pro_mid">
+                            <div class="rollphotos">
+                                <div class="clear"></div>
+                                <div class="content-down">
+                                    <ul class="imgBox1">
+                                        <li>
+                                            <a href="#"><img src="images/img/01.png" /></a>
+                                            <a href="#"><img src="images/img/02.jpg" /></a>
+                                            <a href="#"><img src="images/img/03.png" /></a>
+                                            <a href="#"><img src="images/img/04.png" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/img/01.png" /></a>
+                                            <a href="#"><img src="images/img/02.jpg" /></a>
+                                            <a href="#"><img src="images/img/03.png" /></a>
+                                            <a href="#"><img src="images/img/04.png" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/img/01.png" /></a>
+                                            <a href="#"><img src="images/img/02.jpg" /></a>
+                                            <a href="#"><img src="images/img/03.png" /></a>
+                                            <a href="#"><img src="images/img/04.png" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/img/01.png" /></a>
+                                            <a href="#"><img src="images/img/02.jpg" /></a>
+                                            <a href="#"><img src="images/img/03.png" /></a>
+                                            <a href="#"><img src="images/img/04.png" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/img/01.png" /></a>
+                                            <a href="#"><img src="images/img/02.jpg" /></a>
+                                            <a href="#"><img src="images/img/03.png" /></a>
+                                            <a href="#"><img src="images/img/04.png" /></a>
+                                        </li>
+                                    </ul>
+                                    <div class="currentNum-down">
+                                        <span class="imgNum1 mark-color"></span>
+                                        <span class="imgNum1"></span>
+                                        <span class="imgNum1"></span>
+                                        <span class="imgNum1"></span>
+                                        <span class="imgNum1"></span>
+                                    </div>
+                                    <div class="control1 to-left1"><i class="fa fa-angle-left"></i></div>
+                                    <div class="control1 to-right1"><i class="fa fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_r_c_r">
+                        <div class="an_r">
+                            <div id=con>
+                                <div class="login">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><img src="images/index/login_btn_1.png" alt="" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/index/login_btn_2.png" alt="" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/index/login_btn_3.png" alt="" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/index/login_btn_4.png" alt="" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="bao">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><img src="images/bao_1.jpg" /><br />诚信保障</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/bao_2.jpg" /><br />交易安全</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="images/bao_3.jpg" /><br />商家认证</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul id=tags>
+                                    <li class=selectTag><A onClick="selectTag('tagContent1',this)"
+                                            href="javascript:void(0)">资讯</A></li>
+                                    <li><A onClick="selectTag('tagContent0',this)" href="javascript:void(0)">动态</A></li>
+                                    <li><A href="#">......</A></li>
+                                </ul>
+
+                                <div id=tagContent>
+                                    <div class="tagContent selectTag" id=tagContent1>
+                                        <div class="list">
+                                            <ul>
+                                                <li><a href="#">佳能60D大套 【直降300元】专业</a></li>
+                                                <li><a href="#">罗技 M235 无线光电鼠标2代</a></li>
+                                                <li><a href="#">限时抢购399！马盖先X7战术电脑背</a></li>
+                                                <li><a href="#">摩瑞尔负离子空气净化器</a></li>
+                                            </ul>
+                                            <!--<div class="li-t">
+                          <div class="txt"><span>【用户商场全场1折】</span><br/>
+                            <span><a href="#">为了庆祝用友商城顺利上线，现所有产品1折出售，如果雷同，纯属巧合！！！~ 详情请咨询电商小唐！！！</a></span></div>
+                        </div>-->
+                                        </div>
+                                    </div>
+                                    <div class="tagContent" id=tagContent0>
+                                        <div class="list">
+                                            <ul>
+                                                <li>昨日新加入商家：<span>103</span>家</li>
+                                                <li>平台入驻商家总数：<span>1033</span>家</li>
+                                                <li>昨日新加商品：<span>25412</span>件</li>
+                                                <li>平台商品总数：<span>254,121</span>件</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type=text/javascript>
+            function selectTag(showContent, selfObj) {
+                // 操作标签
+                var tag = document.getElementById("tags").getElementsByTagName("li");
+                var taglength = tag.length;
+                for (i = 0; i < taglength; i++) {
+                    tag[i].className = "";
+                }
+                selfObj.parentNode.className = "selectTag";
+                // 操作内容
+                for (i = 0; j = document.getElementById("tagContent" + i); i++) {
+                    j.style.display = "none";
+                }
+                document.getElementById(showContent).style.display = "block";
+            }
+        </script>
+                        </div>
+                        <div class="online_l">
+                            <h3>NEW!</h3>
+                            <div class="answer">
+                                <a href="#"><img src="images/bd_1.png" width="215" height="238" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hr_20"></div>
+            <a href="#">
+                <div class="adv_l_1 minwidth left"></div>
+            </a>
+
+            <div class="hr_20"></div>
+            <!--精挑细选-->
+            <div>
+                <div class="products_xw">
+                    <h3>精挑细选<span class="more">每一刻都有精彩!</span></h3>
+                    <hr>
+                    <div class="hr_10"></div>
+                    <div class="box_l">
+                        <div class="box_left">
+                            <img src="images/index/bd_2.png" alt="" class="pro_2">
+                            <img src="images/index/bd_3.png" alt="" class="pro_3">
+                        </div>
+                        <img src="images/index/bd_4.png" alt="" class="pro_4">
+
+                        <div class="box_right">
+                            <img src="images/index/bd_5.png" alt="" class="pro_5"><br />
+                            <img src="images/index/bd_6.png" alt="" class="pro_6">
+                        </div>
+                    </div>
+                    <div class="hr_10"></div>
+                </div>
+            </div>
+
+            <!--女装strat-->
+            <div>
+                <div class="products_w">
+                    <div class="ld">
+                        <div class="floor">
+                            <b class="fixpng b b1" style="height: 34px; display: block;"></b>
+                            <b class="fixpng b b2"></b>
+                            <b class="b b3">1F</b><b class="fixpng b4"></b>
+                        </div>
+                    </div>
+                    <h3>女装<span class="more"><a href="#">进入>></a></span>
+                        <dl class="hit">
+                            <span><a href="#"> 最新欧美款</a></span>
+                            <span><a href="#"> 甜美风货源</a></span>
+                            <span><a href="#"> 日式风货源</a></span>
+                        </dl>
+                    </h3>
+                    <hr>
+                    <div class="hr_10"></div>
+                    <!--<div class="box">-->
+                    <div class="box_l">
+                        <div class="pro_l">
+                            <ul class="lh">
+                                <li class="fov">上装</li>
+                                <li><a href="#">文胸</a></li>
+                                <li><a href="#">卫衣</a></li>
+                                <li><a href="#">衬衫</a></li>
+                                <li><a href="#">T桖</a></li>
+                                <li><a href="#">秋冬毛衣</a></li>
+                                <li><a href="#">针织衫</a></li>
+                                <li><a href="#">毛衣</a></li>
+                                <li><a href="#">雪纺衫</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">裙装</li>
+                                <li><a href="#">蕾丝衫</a></li>
+                                <li><a href="#">连衣裙</a></li>
+                                <li><a href="#">半身裙</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">裤装</li>
+                                <li><a href="#">超短裤</a></li>
+                                <li><a href="#">牛仔裤</a></li>
+                                <li><a href="#">休闲裤</a></li>
+                                <li><a href="#">打底裤</a></li>
+                                <li><a href="#">棉裤</a></li>
+                                <li><a href="#">羽绒服</a></li>
+                                <li><a href="#">7分/9分裤</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">外套</li>
+                                <li><a href="#">皮衣/皮革</a></li>
+                                <li><a href="#">小西裤</a></li>
+                                <li><a href="#">风衣/大衣</a></li>
+                                <li><a href="#">毛呢外套</a></li>
+                                <li><a href="#">棉衣</a></li>
+                                <li><a href="#">羽绒服</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">特色女装</li>
+                                <li><a href="#">职业装</a></li>
+                                <li><a href="#">居家装</a></li>
+                                <li><a href="#">孕妇装</a></li>
+                                <li><a href="#">旗袍/唐装</a></li>
+                                <li><a href="#">礼服/婚纱</a></li>
+                                <li><a href="#">防辐射服</a></li>
+                                <li><a href="#">运动/户外装</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">配饰/配件</li>
+                                <li><a href="#">袜子</a></li>
+                                <li><a href="#">手套</a></li>
+                                <li><a href="#">帽子</a></li>
+                                <li><a href="#">披肩/围巾</a></li>
+                                <li><a href="#">腰带/皮带</a></li>
+                                <li><a href="#">项链/手链</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="box_r">
+                        <div class="box_r_c">
+                            <div class="box_r_c_l">
+                                <ul>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/pro_002.jpg" /></a></div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_001.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_002.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_003.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/pro_003.jpg" /></a></div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/pro_004.jpg" /></a></div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/pro_005.jpg" /></a></div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/pro_006.jpg" /></a></div>
+                                            <div class="name"><a target="_blank" href="#">淑女长版外套</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥299.00</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="box_r_c_r">
+                                <ul class="box_r_c_r">
+                                    <li><a href="#"><img src="images/box_r_1.jpg" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/box_r_2.jpg" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/box_r_3.jpg" alt="" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div class="hr_10"></div>
+
+                <div class="tb">
+                    <ul>
+                        <li><a href="#"><img src="images/tb_1.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_2.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_3.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_4.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_5.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_6.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_7.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_8.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_9.jpg" alt="" /></a></li>
+                    </ul>
+                </div>
+                <div class="hr_20"></div>
+            </div>
+
+            <!--女装 end-->
+            <!--男装 strat-->
+            <div>
+                <div class="products_w">
+                    <div class="ld">
+                        <div class="floor">
+                            <b class="fixpng b b1" style="height: 34px; display: block;"></b>
+                            <b class="fixpng b b2"></b>
+                            <b class="b b3">2F</b><b class="fixpng b4"></b>
+                        </div>
+                    </div>
+                    <h3>男装<span class="more"><a href="#">进入>></a></span>
+                        <dl class="hit">
+                            <span><a href="#"> 潮流棉服</a></span>
+                            <span><a href="#"> 帅气牛仔</a></span>
+                            <span><a href="#"> 纯色羽绒</a></span>
+                        </dl>
+                    </h3>
+                    <hr>
+                    <div class="hr_10"></div>
+                    <!--<div class="box">-->
+                    <div class="box_l">
+                        <img src="images/index/bd_7.png" alt="" class="bdimg_7" />
+                        <div class="pro_l">
+                            <ul class="lh">
+                                <li class="fov">上装</li>
+                                <li><a href="#">T桖</a></li>
+                                <li><a href="#">polo衫</a></li>
+                                <li><a href="#">衬衫</a></li>
+                                <li><a href="#">内衣</a></li>
+                                <li><a href="#">秋冬毛衣</a></li>
+                                <li><a href="#">针织衫</a></li>
+                                <li><a href="#">毛衣</a></li>
+                                <li><a href="#">雪纺衫</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">裤装</li>
+                                <li><a href="#">西裤</a></li>
+                                <li><a href="#">牛仔裤</a></li>
+                                <li><a href="#">休闲裤</a></li>
+                                <li><a href="#">内裤</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">外套</li>
+                                <li><a href="#">西服/套装</a></li>
+                                <li><a href="#">皮衣</a></li>
+                                <li><a href="#">风衣/大衣</a></li>
+                                <li><a href="#">毛呢外套</a></li>
+                                <li><a href="#">棉衣</a></li>
+                                <li><a href="#">羽绒服</a></li>
+                                <li><a href="#">夹克</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">特色男装</li>
+                                <li><a href="#">职业装</a></li>
+                                <li><a href="#">运动/户外装</a></li>
+                                <li><a href="#">居家服</a></li>
+                            </ul>
+                            <ul class="lh">
+                                <li class="fov">配饰/配件</li>
+                                <li><a href="#">袜子</a></li>
+                                <li><a href="#">手套</a></li>
+                                <li><a href="#">帽子</a></li>
+                                <li><a href="#">腰带/皮带</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box_r">
+                        <div class="box_r_c">
+                            <div class="box_r_c_l">
+                                <ul>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_004.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_005.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_006.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_007.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_008.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_009.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_010.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_011.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">帅气羊毛衫</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥65.00</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="box_nz_r">
+                                <ul>
+                                    <li><a href="#"><img src="images/index/pt_1.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_2.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_3.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_4.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_5.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_6.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_7.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_8.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_9.png" alt="" /></a></li>
+                                    <li><a href="#"><img src="images/index/pt_10.png" alt="" /></a></li>
+                                </ul>
+                                <img src="images/index/bd_8.png" alt="" class="bdimg_8" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+            <!--男装 end-->
+            <div class="hr_20"></div>
+
+            <!--童装 strat-->
+            <div>
+                <div class="products_w">
+                    <div class="ld">
+                        <div class="floor">
+                            <b class="fixpng b b1" style="height: 34px; display: block;"></b>
+                            <b class="fixpng b b2"></b>
+                            <b class="b b3">3F</b><b class="fixpng b4"></b>
+                        </div>
+                    </div>
+                    <h3>童装<span class="more"><a href="#">进入>></a></span>
+                        <dl class="hit">
+                            <span><a href="#"> 一体裤</a></span>
+                            <span><a href="#"> 七彩棉</a></span>
+                            <span><a href="#"> 全棉</a></span>
+                        </dl>
+                    </h3>
+                    <hr>
+                    <div class="hr_10"></div>
+                    <!--<div class="box">-->
+                    <div class="box_l">
+                        <div class="pro_l">
+                            <div class="por_tz_l">
+                                <ul class="tz">
+                                    <li class="tz_fov">上装</li>
+                                    <li><a href="#">衬衫</a></li>
+                                    <li><a href="#">T桖</a></li>
+                                    <li><a href="#">秋冬毛衣</a></li>
+                                    <li><a href="#">针织衫</a></li>
+                                    <li><a href="#">毛衣</a></li>
+                                </ul>
+                                <ul class="tz">
+                                    <li class="tz_fov">下装</li>
+                                    <li><a href="#">裙装</a></li>
+                                    <li><a href="#">牛仔裤</a></li>
+                                    <li><a href="#">休闲裤</a></li>
+                                    <li><a href="#">内裤</a></li>
+                                    <li><a href="#">棉裤/羽绒裤</a></li>
+                                </ul>
+                                <ul class="tz">
+                                    <li class="tz_fov">外套</li>
+                                    <li><a href="#">棉衣</a></li>
+                                    <li><a href="#">小西裤</a></li>
+                                    <li><a href="#">毛呢外套</a></li>
+                                </ul>
+                                <ul class="tz">
+                                    <li class="tz_fov">特色童装</li>
+                                    <li><a href="#">运动/户外装</a></li>
+                                    <li><a href="#">亲子装</a></li>
+                                    <li><a href="#">连身衣</a></li>
+                                </ul>
+                            </div>
+                            <div class="por_tz_r">
+                                <img src="images/index/box_1.png" alt="" />
+                                <img src="images/index/box_2.png" alt="" />
+                                <img src="images/index/box_3.png" alt="" />
+                                <img src="images/index/box_4.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box_r">
+                        <div class="box_r_c">
+                            <div class="box_r_c_l">
+                                <ul>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_012.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_013.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_014.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_015.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_016.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_017.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_018.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_019.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">新款女童外衣</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥199.00</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="box_r_c_r">
+                                <ul class="box_r_c_r">
+                                    <li><a href="#"><img src="images/index/bd_9.png" alt="" class="bdimg_9" /></a></li>
+                                    <li><a href="#"><img src="images/index/bd_10.png" alt="" class="bdimg_10" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div class="hr_10"></div>
+
+                <div class="tb">
+                    <ul>
+                        <li><a href="#"><img src="images/tb_1.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_2.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_3.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_4.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_5.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_6.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_7.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_8.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_9.jpg" alt="" /></a></li>
+                    </ul>
+                </div>
+                <div class="hr_20"></div>
+            </div>
+            <!--童装 end-->
+
+            <!--箱包/鞋类 strat-->
+            <div>
+                <div class="products_w">
+                    <div class="ld">
+                        <div class="floor">
+                            <b class="fixpng b b1" style="height: 34px; display: block;"></b>
+                            <b class="fixpng b b2"></b>
+                            <b class="b b3">4F</b><b class="fixpng b4"></b>
+                        </div>
+                    </div>
+                    <h3>箱包/鞋类<span class="more"><a href="#">进入>></a></span>
+                        <dl class="hit">
+                            <span><a href="#"> 优雅复古</a></span>
+                            <span><a href="#"> 韩版风范</a></span>
+                            <span><a href="#"> 欧美大牌</a></span>
+                        </dl>
+                    </h3>
+                    <hr>
+                    <div class="hr_10"></div>
+                    <!--<div class="box">-->
+                    <div class="box_l">
+                        <div class="pro_l">
+                            <div class="por_tz_l">
+                                <ul class="xbxl">
+                                    <li class="tz_fov">时尚包袋</li>
+                                    <li><a href="#">单肩包</a></li>
+                                    <li><a href="#">双肩包</a></li>
+                                    <li><a href="#">手拿/提包</a></li>
+                                    <li><a href="#">电脑包</a></li>
+                                    <li><a href="#">腰包</a></li>
+                                </ul>
+                                <ul class="xbxl">
+                                    <li class="tz_fov">行李箱包</li>
+                                    <li><a href="#">拉杆箱</a></li>
+                                    <li><a href="#">旅行袋</a></li>
+                                </ul>
+                                <ul class="xbxl">
+                                    <li class="tz_fov">女鞋</li>
+                                    <li><a href="#">皮鞋</a></li>
+                                    <li><a href="#">板鞋</a></li>
+                                    <li><a href="#">运动鞋</a></li>
+                                </ul>
+                            </div>
+                            <div class="por_tz_r">
+                                <ul class="xbxl">
+                                    <li class="tz_fov">男鞋</li>
+                                    <li><a href="#">皮鞋</a></li>
+                                    <li><a href="#">板鞋</a></li>
+                                    <li><a href="#">运动鞋</a></li>
+                                    <li><a href="#">休闲鞋</a></li>
+                                </ul>
+                                <ul class="xbxl">
+                                    <li class="tz_fov">童鞋</li>
+                                    <li><a href="#">板鞋</a></li>
+                                    <li><a href="#">运动鞋</a></li>
+                                    <li><a href="#">休闲鞋</a></li>
+                                    <li><a href="#">皮鞋</a></li>
+                                </ul>
+                            </div>
+                            <img src="images/index/bd_13.png" alt="" class="bdimg_13" />
+                        </div>
+                    </div>
+
+                    <div class="box_r">
+                        <div class="box_r_c">
+                            <div class="box_r_c_l">
+                                <ul>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_020.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_021.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_022.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_023.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_024.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_025.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_026.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="list">
+                                            <div class="thumb"><a href="#"><img src="images/index/pro_027.png" /></a>
+                                            </div>
+                                            <div class="name"><a target="_blank" href="#">东莞阿明郑鞋业</a></div>
+                                            <div class="price">批发价：<span class="font_red font_12">¥128.00</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="box_r_c_r">
+                                <ul class="box_r_c_r">
+                                    <li><a href="#"><img src="images/index/bd_11.png" alt="" class="bdimg_11" /></a>
+                                    </li>
+                                    <li><a href="#"><img src="images/index/bd_12.png" alt="" class="bdimg_11" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div class="hr_10"></div>
+                <div class="tb">
+                    <ul>
+                        <li><a href="#"><img src="images/tb_1.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_2.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_3.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_4.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_5.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_6.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_7.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_8.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="images/tb_9.jpg" alt="" /></a></li>
+                    </ul>
+                </div>
+                <div class="hr_20"></div>
+            </div>
+            <!--箱包/鞋类 end-->
+            <!--广告-->
+            <div class="box">
+                <div class="hr_10"></div>
+                <a href="#">
+                    <img src="images/adv_l_2.jpg" alt="" />
+                </a>
+                <div class="hr_20"></div>
+            </div>
+            <!--广告-->
+
+            <!--平台资讯 strat-->
+            <div class="box_pt">
+                <h3>平台资讯<img src="images/icon_1.jpg" alt="" class="pt_img" /></h3>
+                <div class="pt_conter">
+                    <div class="box_pt_l">
+                        <div class="box_pt_titel">
+                            <h6>资讯导购</h6>
+                            <span><a href="#">更多<img src="images/index/more.png" alt="" /></a> </span>
+                        </div>
+                        <div class="box_ptcent">
+                            <ul id="ul_pt">
+                                <li onMouseOver="selectPt('pt1_1',1)"><img src="images/index/zx_1.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt1_2',1)"><img src="images/index/zx_2.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt1_3',1)"><img src="images/index/zx_3.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt1_4',1)"><img src="images/index/zx_4.png" alt="" /></li>
+                            </ul>
+                            <div id="pt1_1" class="box_p_tyle">
+                                <p>
+                                    <b><a href="#">1.90后灰姑娘如何在1个月内做到100万1</a></b>
+                                    <span>90后，在大家一贯的思想中，是伴随着"非主流"这个词，然而温州纱扬鞋业的创始人.....</span>
+                                </p>
+                            </div>
+                            <div id="pt1_2" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">1688女装“买手直播厅”招募最强买手团</a></b>
+                                    <span>就是那种天天跑档口，有广泛的档口人脉资源，可以随时拍摄档口新歌，给下家快速配货组或，赚取跑腿费.....</span>
+                                </p>
+                            </div>
+                            <div id="pt1_3" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">经典潮流元素今秋再度来袭</a></b>
+                                    <span>真丝拼接殿堂级的设计师时尚范抽象流氓兔圈圈捍卫衣款，经典白裙亮片收腰外套.....</span>
+                                </p>
+                            </div>
+                            <div id="pt1_4" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">1.90后灰姑娘如何在1个月内做到100万4</a></b>
+                                    <span>90后，在大家一贯的思想中，是伴随着"非主流"这个词，然而温州纱扬鞋业的创始人.....</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_pt_l">
+                        <div class="box_pt_titel">
+                            <h6>买家之声</h6>
+                            <span><a href="#">更多<img src="images/index/more.png" alt="" /></a> </span>
+                        </div>
+                        <div class="box_ptcent">
+                            <ul>
+                                <li onMouseOver="selectPt('pt2_1',2)"><img src="images/index/zx_5.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt2_2',2)"><img src="images/index/zx_6.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt2_3',2)"><img src="images/index/zx_7.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt2_4',2)"><img src="images/index/zx_8.png" alt="" /></li>
+                            </ul>
+                            <div id="pt2_1" class="box_p_tyle">
+                                <p>
+                                    <b><a href="#">1.90后灰姑娘如何在1个月内做到100万1</a></b>
+                                    <span>90后，在大家一贯的思想中，是伴随着"非主流"这个词，然而温州纱扬鞋业的创始人.....</span>
+                                </p>
+                            </div>
+                            <div id="pt2_2" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">1688女装“买手直播厅”招募最强买手团</a></b>
+                                    <span>就是那种天天跑档口，有广泛的档口人脉资源，可以随时拍摄档口新歌，给下家快速配货组或，赚取跑腿费.....</span>
+                                </p>
+                            </div>
+                            <div id="pt2_3" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">经典潮流元素今秋再度来袭</a></b>
+                                    <span>真丝拼接殿堂级的设计师时尚范抽象流氓兔圈圈捍卫衣款，经典白裙亮片收腰外套.....</span>
+                                </p>
+                            </div>
+                            <div id="pt2_4" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">1.90后灰姑娘如何在1个月内做到100万4</a></b>
+                                    <span>90后，在大家一贯的思想中，是伴随着"非主流"这个词，然而温州纱扬鞋业的创始人.....</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_pt_l">
+                        <div class="box_pt_titel">
+                            <h6>官方公告</h6>
+                            <span><a href="#">更多<img src="images/index/more.png" alt="" /></a> </span>
+                        </div>
+                        <div class="box_ptcent">
+                            <ul>
+                                <li onMouseOver="selectPt('pt3_1',3)"><img src="images/index/zx_1.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt3_2',3)"><img src="images/index/zx_2.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt3_3',3)"><img src="images/index/zx_3.png" alt="" /></li>
+                                <li onMouseOver="selectPt('pt3_4',3)"><img src="images/index/zx_4.png" alt="" /></li>
+                            </ul>
+                            <div id="pt3_1" class="box_p_tyle">
+                                <p>
+                                    <b><a href="#">1.90后灰姑娘如何在1个月内做到100万1</a></b>
+                                    <span>90后，在大家一贯的思想中，是伴随着"非主流"这个词，然而温州纱扬鞋业的创始人.....</span>
+                                </p>
+                            </div>
+                            <div id="pt3_2" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">1688女装“买手直播厅”招募最强买手团</a></b>
+                                    <span>就是那种天天跑档口，有广泛的档口人脉资源，可以随时拍摄档口新歌，给下家快速配货组或，赚取跑腿费.....</span>
+                                </p>
+                            </div>
+                            <div id="pt3_3" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">经典潮流元素今秋再度来袭</a></b>
+                                    <span>真丝拼接殿堂级的设计师时尚范抽象流氓兔圈圈捍卫衣款，经典白裙亮片收腰外套.....</span>
+                                </p>
+                            </div>
+                            <div id="pt3_4" class="box_p_tyle hidden">
+                                <p>
+                                    <b><a href="#">1.90后灰姑娘如何在1个月内做到100万4</a></b>
+                                    <span>90后，在大家一贯的思想中，是伴随着"非主流"这个词，然而温州纱扬鞋业的创始人.....</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr_10"></div>
+                <script type=text/javascript>
+        function selectPt(showContent, selfObj) {
+            // 操作内容
+            var tag = document.getElementById("ul_pt").getElementsByTagName("li");
+            var taglength = tag.length;
+            for (var i = 1; i<= taglength; i++) {
+                document.getElementById("pt"+selfObj+"_"+ i).style.display = "none";
+            }
+            document.getElementById(showContent).style.display = "block";
+        }
+    </script>
+            </div>
+            <!--平台资讯 end-->
+
+            <!--吃喝玩乐 strat-->
+            <div class="hr_20"></div>
+            <div class="box_pt">
+                <h3>吃喝玩乐<img src="images/icon_2.png" alt="" class="pt_img" /></h3>
+                <div class="ch_conter">
+                    <div class="hr_20"></div>
+                    <div class="box_ch_l">
+                        <img src="images/index/ch_1.png" alt="" />
+                    </div>
+                    <div class="box_ch_l">
+                        <img src="images/index/ch_2.png" alt="" />
+                    </div>
+                    <div class="box_ch_l">
+                        <img src="images/index/ch_3.png" alt="" />
+                    </div>
+                    <div class="box_ch_l">
+                        <img src="images/index/ch_4.png" alt="" />
+                    </div>
+                </div>
+                <div class="hr_10"></div>
+            </div>
+            <!--吃喝玩乐 end-->
+
+            <!--平台推荐 strat-->
+            <div class="hr_20"></div>
+            <div class="box_pt">
+                <h3>平台推荐<img src="images/icon_3.jpg" alt="" class="pt_img" /></h3>
+                <div class="ch_conter">
+                    <div class="hr_20"></div>
+                    <div id="playBox">
+                        <div class="pre"></div>
+                        <div class="next"></div>
+                        <div class="smalltitle">
+                            <ul>
+                                <li class="thistitle"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <ul class="oUlplay">
+                            <li>
+                                <div class="box_tj_l">
+                                    <table class="tj_l_table">
+                                        <tr>
+                                            <td rowspan="2" class="tdborder"><img src="images/index/tj_1.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥428.00</b><br />
+                                                    <span><a href="#">棉衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_2.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥59.00</b><br />
+                                                    <span><a href="#">皮裤</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_3.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td rowspan="2" class="td_ber"><img src="images/index/tj_6.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_7.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥189.00</b><br />
+                                                    <span><a href="#">女童外套</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_9.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥108.00</b><br />
+                                                    <span><a href="#">儿童毛衣</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td_ber"><img src="images/index/tj_4.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥138.00</b><br />
+                                                    <span><a href="#">床褥</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_5.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥129.00</b><br />
+                                                    <span><a href="#">上衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_10.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥10.30</b><br />
+                                                    <span><a href="#">衣架</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_11.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥751.60</b><br />
+                                                    <span><a href="#">手镯</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box_tj_l">
+                                    <table class="tj_l_table">
+                                        <tr>
+                                            <td rowspan="2" class="tdborder"><img src="images/index/tj_1.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥428.00</b><br />
+                                                    <span><a href="#">棉衣1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_2.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥59.00</b><br />
+                                                    <span><a href="#">皮裤1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_3.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td rowspan="2" class="td_ber"><img src="images/index/tj_6.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_7.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥189.00</b><br />
+                                                    <span><a href="#">女童外套1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_9.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥108.00</b><br />
+                                                    <span><a href="#">儿童毛衣1</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td_ber"><img src="images/index/tj_4.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥138.00</b><br />
+                                                    <span><a href="#">床褥1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_5.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥129.00</b><br />
+                                                    <span><a href="#">上衣1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_10.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥10.30</b><br />
+                                                    <span><a href="#">衣架1</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_11.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥751.60</b><br />
+                                                    <span><a href="#">手镯1</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box_tj_l">
+                                    <table class="tj_l_table">
+                                        <tr>
+                                            <td rowspan="2" class="tdborder"><img src="images/index/tj_1.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥428.00</b><br />
+                                                    <span><a href="#">棉衣2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_2.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥59.00</b><br />
+                                                    <span><a href="#">皮裤2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_3.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td rowspan="2" class="td_ber"><img src="images/index/tj_6.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_7.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥189.00</b><br />
+                                                    <span><a href="#">女童外套2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_9.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥108.00</b><br />
+                                                    <span><a href="#">儿童毛衣2</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td_ber"><img src="images/index/tj_4.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥138.00</b><br />
+                                                    <span><a href="#">床褥2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_5.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥129.00</b><br />
+                                                    <span><a href="#">上衣2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_10.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥10.30</b><br />
+                                                    <span><a href="#">衣架2</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_11.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥751.60</b><br />
+                                                    <span><a href="#">手镯2</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box_tj_l">
+                                    <table class="tj_l_table">
+                                        <tr>
+                                            <td rowspan="2" class="tdborder"><img src="images/index/tj_1.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥428.00</b><br />
+                                                    <span><a href="#">棉衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_2.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥59.00</b><br />
+                                                    <span><a href="#">皮裤</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_3.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td rowspan="2" class="td_ber"><img src="images/index/tj_6.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥478.00</b><br />
+                                                    <span><a href="#">棉衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_7.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥189.00</b><br />
+                                                    <span><a href="#">女童外套</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_9.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥108.00</b><br />
+                                                    <span><a href="#">儿童毛衣</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td_ber"><img src="images/index/tj_4.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥138.00</b><br />
+                                                    <span><a href="#">床褥</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_5.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥129.00</b><br />
+                                                    <span><a href="#">上衣</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_10.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥10.30</b><br />
+                                                    <span><a href="#">衣架</a> </span>
+                                                </div>
+                                            </td>
+                                            <td class="td_ber"><img src="images/index/tj_11.png" alt="" />
+                                                <div class="tj_price"><b class="font_red font_14">¥751.60</b><br />
+                                                    <span><a href="#">手镯</a> </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hr_10"></div>
+            </div>
+            <!--平台推荐 end-->
+            <div class="hr_20"></div>
+            <img src="images/index/bd_14.png" alt="" class="bdimg_14" />
+        </div>
+    </div>
+    <div class="hr_20"></div>
+
+    <div class="help">
+        <div class="wrapper">
+            <div class="helpinfo">
+                <ul>
+                    <li>
+                        <dl class="li-1">
+                            <dt>新手指南</dt>
+                            <dd><a href="#" target="_blank">新人购物指南</a></dd>
+                            <dd><a href="#" target="_blank">商户服务平台</a></dd>
+                            <dd><a href="#" target="_blank">黄河交易规则</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="li-2">
+                            <dt>诚信保证计划</dt>
+                            <dd><a href="#" target="_blank">先行赔付</a></dd>
+                            <dd><a href="#" target="_blank">7天包退</a></dd>
+                            <dd><a href="#" target="_blank">诚保代充</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="li-3">
+                            <dt>支付方式</dt>
+                            <dd><a href="#" target="_blank">一点通支付</a></dd>
+                            <dd><a href="#" target="_blank">信用卡支付</a></dd>
+                            <dd><a href="#" target="_blank">借记卡支付</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="li-4">
+                            <dt>售后服务</dt>
+                            <dd><a href="#" target="_blank">联系客服</a></dd>
+                            <dd><a href="#" target="_blank">消费者维权中心</a></dd>
+                            <dd><a href="#" target="_blank">快捷支付</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--/*邮件订阅*/-->
+    <div class="nav_d">
+        <div class="wrapper">
+            <div class="e-mial">
+                <img src="images/index/email.png" alt="" />
+                <span>邮件订阅</span>
+                <input type="text" name="email" class="input_email" />
+                <a href="#" style="margin: 0px 2px;"><img src="images/index/dingyue.png" alt="" /></a>
+                <a href="#" style="margin: 0px 2px;"><img src="images/index/tuiding.png" alt="" /></a>
+            </div>
+        </div>
+    </div>
+    <!--/*底部导航*/-->
+    <div class="nav_d">
+        <div class="wrapper">
+            <a href="#">公司简介</a>|
+            <a href="#">合作意向</a>|
+            <a href="#">联系我们</a>|
+            <a href="#">招标信息</a>|
+            <a href="#">房地产</a>|
+            <a href="#">休闲农业</a>|
+            <a href="#">环保能源</a>
+        </div>
+    </div>
+    <div class="nav_d">
+        <div class="wrapper">
+            友情链接：
+            <a href="#">黄河在线电商</a>|
+            <a href="#">淘宝</a>|
+            <a href="#">京东</a>|
+            <a href="#">当当</a>|
+            <a href="#">亚马逊</a>|
+            <a href="#">腾讯</a>|
+            <a href="#">阿里巴巴</a>|
+            <a href="#">百度</a>|
+            <a href="#">人人网</a>
+        </div>
+    </div>
+
+    <!--/*版权信息*/-->
+    <div class="hr_20"></div>
+    <div class="footer">
+        <p>Copyright ©黄河在线商城. All Rights Reserved. 粤ICP证080047号</p>
+    </div>
+    <div style="text-align: center;margin: 5px auto 10px;">
+        <img src="images/copyright.png" alt="">
+    </div>
+
+    <!--backtoTop1-->
+    <!--兼容所有现代浏览器同时包括 ie6/7/8/9 （ie6会有一点点抖动）-->
+    <div class="backtoTop" id="backToTop1">
+        <div id="backToTop-up" class="up-back"><i class="fa fa-angle-up"></i></div>
+        <div id="backToTop-down" class="down-back"><i class="fa fa-angle-down"></i></div>
+    </div>
+
+</body>
+
+</html>

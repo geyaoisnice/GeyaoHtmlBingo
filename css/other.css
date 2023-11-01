@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* 会员登录 */
+.loginnew-box{padding:50px 20px;zoom:1; float:left;}
+.loginnew-box:after{content: ""; display: block; clear: both; height: 0px;}
+.loginnew-box .login-form{width:1120px;padding:5px 20px 0px 20px;float:left;}
+.loginnew-box .login-form h2{height:30px;padding-left:5px;line-height:30px;font-family:Arial,helvetica,sans-serif;font-size:16px;color:#333;border-bottom:1px #e7e7e7 dashed; width:100%;}
+.loginnew-box .login-form .z_zchy{ text-indent:-999em;background:url(../images/z_zchy.png) no-repeat 5px 5px; }
+.loginnew-box .login-form .z_hydl{ text-indent:-999em;background:url(../images/z_hydl.png) no-repeat 5px 5px;}
+.loginnew-box .login-form .main{padding:25px 0px;float:left; width:600px; }
+.loginnew-box .login-form .main dl{clear:both;margin-bottom:15px;zoom:1;}
+.loginnew-box .login-form .main dl:after { content:""; display:block; clear:both; height:0; }
+.loginnew-box .login-form .main dl dt{width:100px;min-height:32px;_height:32px;text-align:right;font-size:14px;line-height:32px;color:#000;float:left;}
+.loginnew-box .login-form .main dl dd{width:500px;min-height:32px;_height:32px;color:#999;float:left;}
+.loginnew-box .login-form .main dl dd .txt{height:30px;padding:0px 0px 0px 5px;line-height:15px;display:inline-block; vertical-align:middle;}
+.loginnew-box .login-form .main .stat{clear:both;padding:0px 0px 20px 75px;color:#999;}
+.loginnew-box .login-form .main .submit{padding:0px 0px 20px 75px;}
+.loginnew-box .login-form .hz{clear:both; padding:10px 0px 20px 0px; border-top:1px #e7e7e7 dashed; overflow:hidden;}
+.loginnew-box .login-form .hz h3{height:25px;font-size:12px;font-weight:normal;}
+.loginnew-box .login-info{ width:400px;margin-top:35px;float:left;border-left:1px #e7e7e7 dashed; padding:50px 0 100px 100px;}
+.loginnew-box .login-info h3{height:40px;font-size:14px;color:#333;}
+.loginnew-box .login-info .submit{height:50px; position:relative; padding-left:30px;}
+
